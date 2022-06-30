@@ -40,21 +40,56 @@ html li, body li {
   transition: all 0.3s;
 }
 
+.navbar .nav-link {
+  font-size: 20px;
+}
+
 .navbar .nav-link:hover {
   color: #e7740f;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.list .list-info .name p {
+.bg-radien {
+  background: linear-gradient(330deg, #e5da18 0%, #6a54cc 25%, #9e297f 50%, #7809e8 75%, #e11313 100%);
+}
+
+.list .list-info .name a {
   font-size: 600;
   font-weight: 600;
-  color: #0a0707;
+  color: #ffffff;
 }
 
 .list .list-info .price p {
   font-size: 400;
   font-weight: 400;
-  color: #0a0707;
+  color: #ffffff;
+}
+
+.list .list-info .btn-add-cart {
+  top: 0;
+  right: 0;
+  color: #ffffff;
+  font-size: 20px;
+  border: none;
+  background: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.list .list-info .btn-add-cart:hover {
+  color: #e7740f;
+}
+
+.list .list-img {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.list .list-img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,10 +1,16 @@
+
 .navbar{
     .navbar-brand:hover{
         color: $color-hover;
         @include trans
     }
-    .nav-link:hover{
-        color: $color-hover;
-        @include trans
+    .nav-link
+    {
+        font-size: $fs-add;
+        &:hover{
+            color: $color-hover;
+            @include trans
+        }
     }
+   
 }

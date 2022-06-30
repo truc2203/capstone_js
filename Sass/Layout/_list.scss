@@ -1,10 +1,40 @@
-.list{
-    .list-info{
-        .name p{
-            @include txtStyle($fs-1,$fw-1,$color-primary)
-        }
-        .price p{
-            @include txtStyle($fs-2,$fw-2,$color-primary)
-        }
+.bg-radien {
+  background: linear-gradient(
+    330deg,
+    #e5da18 0%,
+    #6a54cc 25%,
+    #9e297f 50%,
+    #7809e8 75%,
+    #e11313 100%
+  );
+}
+.list {
+  .list-info {
+    .name a {
+      @include txtStyle($fs-1, $fw-1, $color-primary);
     }
+    .price p {
+      @include txtStyle($fs-2, $fw-2, $color-primary);
+    }
+    .btn-add-cart {
+      top: 0;
+      right: 0;
+      color: $color-primary;
+      font-size: $fs-add;
+      //repalce bs5
+      border: none;
+      background: none;
+      @include trans;
+      &:hover{
+        color:$color-hover;
+      }
+    }
+  }
+  .list-img {
+    @include trans;
+    &:hover {
+      transform: scale(1.1);
+      @include trans;
+    }
+  }
 }
