@@ -26,6 +26,10 @@ html li, body li {
   margin: auto;
 }
 
+.bg-radien {
+  background: linear-gradient(330deg, #e5da18 0%, #6a54cc 25%, #9e297f 50%, #7809e8 75%, #e11313 100%);
+}
+
 .banner {
   background-image: url("../Img/Banner-Big-1920x450-1920x450.jpg");
   height: 360px;
@@ -48,10 +52,6 @@ html li, body li {
   color: #e7740f;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-.bg-radien {
-  background: linear-gradient(330deg, #e5da18 0%, #6a54cc 25%, #9e297f 50%, #7809e8 75%, #e11313 100%);
 }
 
 .list .list-info .name a {

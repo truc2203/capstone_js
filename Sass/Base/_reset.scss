@@ -21,3 +21,13 @@ html,body{
     margin: auto;
    
 }
+.bg-radien {
+    background: linear-gradient(
+      330deg,
+      #e5da18 0%,
+      #6a54cc 25%,
+      #9e297f 50%,
+      #7809e8 75%,
+      #e11313 100%
+    );
+  }
