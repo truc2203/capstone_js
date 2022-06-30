@@ -1,0 +1,10 @@
+.list{
+    .list-info{
+        .name p{
+            @include txtStyle($fs-1,$fw-1,$color-primary)
+        }
+        .price p{
+            @include txtStyle($fs-2,$fw-2,$color-primary)
+        }
+    }
+}

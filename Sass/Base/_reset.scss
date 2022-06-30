@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+    a,p,span{
+        text-decoration: none;
+        padding: 0;
+        margin: 0;
+    }
+    li{
+        list-style: none;
+    }
+}
+.container-m{
+    max-width: 1280px;
+    margin: auto;
+}

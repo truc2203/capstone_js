@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+html a, html p, html span, body a, body p, body span {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+html li, body li {
+  list-style: none;
+}
+
+.container-m {
+  max-width: 1280px;
+  margin: auto;
+}
+
+.banner {
+  background-image: url("../Img/Banner-Big-1920x450-1920x450.jpg");
+  height: 360px;
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar .navbar-brand:hover {
+  color: #e7740f;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: #e7740f;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.list .list-info .name p {
+  font-size: 600;
+  font-weight: 600;
+  color: #0a0707;
+}
+
+.list .list-info .price p {
+  font-size: 400;
+  font-weight: 400;
+  color: #0a0707;
+}
+/*# sourceMappingURL=main.css.map */
