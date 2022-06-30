@@ -1,31 +1,29 @@
 
 .list {
-  .list-info {
-    .name a {
-      @include txtStyle($fs-1, $fw-1, $color-primary);
+  .list-card{
+    overflow: hidden;
+    .list-info {
+      .name a {
+        @include txtStyle($fs-1, $fw-1, $color-primary);
+      }
+      .price p {
+        @include txtStyle($fs-2, $fw-2, $color-primary);
+      }
+      .btn-add-cart {
+        @include btnStyle($color-primary,$fs-add);
+        @include trans;
+        &:hover{
+          color:$color-hover;
+        }
+      }
     }
-    .price p {
-      @include txtStyle($fs-2, $fw-2, $color-primary);
-    }
-    .btn-add-cart {
-      top: 0;
-      right: 0;
-      color: $color-primary;
-      font-size: $fs-add;
-      //repalce bs5
-      border: none;
-      background: none;
+    .list-img {
       @include trans;
-      &:hover{
-        color:$color-hover;
+      &:hover {
+        transform: scale(1.1);
+        @include trans;
       }
     }
   }
-  .list-img {
-    @include trans;
-    &:hover {
-      transform: scale(1.1);
-      @include trans;
-    }
-  }
+  
 }

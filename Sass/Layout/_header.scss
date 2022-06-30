@@ -4,13 +4,12 @@
         color: $color-hover;
         @include trans
     }
-    .nav-link
+    .btn-add-cart
     {
-        font-size: $fs-add;
+        @include btnStyle($color-primary,$fs-add);
         &:hover{
-            color: $color-hover;
-            @include trans
-        }
+            color:$color-hover;
+          }
     }
    
 }

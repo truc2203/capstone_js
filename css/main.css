@@ -44,29 +44,36 @@ html li, body li {
   transition: all 0.3s;
 }
 
-.navbar .nav-link {
+.navbar .btn-add-cart {
+  top: 0;
+  right: 0;
+  color: #ffffff;
   font-size: 20px;
+  border: none;
+  background: none;
 }
 
-.navbar .nav-link:hover {
+.navbar .btn-add-cart:hover {
   color: #e7740f;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
 }
 
-.list .list-info .name a {
+.list .list-card {
+  overflow: hidden;
+}
+
+.list .list-card .list-info .name a {
   font-size: 600;
   font-weight: 600;
   color: #ffffff;
 }
 
-.list .list-info .price p {
+.list .list-card .list-info .price p {
   font-size: 400;
   font-weight: 400;
   color: #ffffff;
 }
 
-.list .list-info .btn-add-cart {
+.list .list-card .list-info .btn-add-cart {
   top: 0;
   right: 0;
   color: #ffffff;
@@ -77,16 +84,16 @@ html li, body li {
   transition: all 0.3s;
 }
 
-.list .list-info .btn-add-cart:hover {
+.list .list-card .list-info .btn-add-cart:hover {
   color: #e7740f;
 }
 
-.list .list-img {
+.list .list-card .list-img {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.list .list-img:hover {
+.list .list-card .list-img:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-transition: all 0.3s;
