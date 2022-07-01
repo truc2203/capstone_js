@@ -24,17 +24,41 @@
   </head>
   <body class="bg-radien position-relative">
         <!-- SIDEBAR -->
-    <div class="cover position-absolute">
-      <div id="show-slidebar" class="sidebar">
+    <div class="cover position-absolute overflow-hidden">
+      <div id="show-slidebar" class="sidebar position-absolute px-4 ">
           <div class="slidebar-title text-center py-4 position-relative">
             <h3 >Giỏ hàng của bạn</h3>
             <button id="btnCloseCart" type="button" class="position-absolute btn-close-cart"><i class="fa-solid fa-xmark"></i></button>
           </div>
-
+          <!-- TABLE PRODUCT -->
+          <div class="tblProduct" id="tlbProduct">
+              <table class="table table-bordered">
+                <thead>
+                  <th>Hình ảnh</th>
+                  <th>Tên SP</th>
+                  <th>Giá</th>
+                  <th>Số lượng</th>  
+                  <th>Giảm giá</th>
+                  <th>Tổng tiền</th>              
+                </thead>
+                <tbody id="tblList">
+                  <!-- Render using Js -->
+                  <tr>
+                    <td>Hinh 1</td>
+                    <td>Iphone 13</td>
+                    <td>$1.999</td>
+                    <td>2</td>
+                    <td>10%</td>
+                    <td>$3.998</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          <!-- END TABLE -->
       </div>
     </div>
     <!-- HEADER -->
-    <div class="container-m">
+    <div class="container-m sticky">
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid px-4">
           <a href="#" class="navbar-brand n">Capstone JS</a>
@@ -63,8 +87,6 @@
     </div>
     <!-- END HEADER -->
 
-
-
     <!-- BANNER -->
     <section class="container-m">
       <div class="banner"></div>
@@ -89,8 +111,9 @@
                   <div class="name">
                     <a href="">Iphone</a>
                   </div>
-                  <div class="price">
+                  <div class="price position-relative">
                     <p>13.000.0000</p>
+                    <div class="discount position-absolute rounded-3">-30%</div>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>
@@ -145,8 +168,9 @@
                   <div class="name">
                     <a href="">Iphone</a>
                   </div>
-                  <div class="price">
+                  <div class="price position-relative">
                     <p>13.000.0000</p>
+                    <div class="discount position-absolute rounded-3">-30%</div>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>
@@ -200,8 +224,9 @@
                   <div class="name">
                     <a href="">Iphone</a>
                   </div>
-                  <div class="price">
+                  <div class="price position-relative">
                     <p>13.000.0000</p>
+                    <div class="discount position-absolute rounded-3">-30%</div>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>
@@ -255,8 +280,9 @@
                   <div class="name">
                     <a href="">Iphone</a>
                   </div>
-                  <div class="price">
+                  <div class="price position-relative">
                     <p>13.000.0000</p>
+                    <div class="discount position-absolute rounded-3">-30%</div>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>
@@ -310,8 +336,9 @@
                   <div class="name">
                     <a href="">Iphone</a>
                   </div>
-                  <div class="price">
+                  <div class="price position-relative">
                     <p>13.000.0000</p>
+                    <div class="discount position-absolute rounded-3">-30%</div>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>
@@ -365,8 +392,9 @@
                   <div class="name">
                     <a href="">Iphone</a>
                   </div>
-                  <div class="price">
+                  <div class="price position-relative">
                     <p>13.000.0000</p>
+                    <div class="discount position-absolute rounded-3">-30%</div>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>
@@ -420,8 +448,9 @@
                   <div class="name">
                     <a href="">Iphone</a>
                   </div>
-                  <div class="price">
+                  <div class="price position-relative">
                     <p>13.000.0000</p>
+                    <div class="discount position-absolute rounded-3">-30%</div>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>
@@ -475,8 +504,9 @@
                   <div class="name">
                     <a href="">Iphone</a>
                   </div>
-                  <div class="price">
+                  <div class="price position-relative">
                     <p>13.000.0000</p>
+                    <div class="discount position-absolute rounded-3">-30%</div>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>

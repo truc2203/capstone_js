@@ -2,7 +2,7 @@
     transition: all 0.3s;
 }
 @mixin txtStyle($fs,$fw,$color) {
-    font-size: $fw;
+    font-size: $fs;
     font-weight: $fw;
     color: $color;
 }
