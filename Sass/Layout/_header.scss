@@ -1,21 +1,24 @@
-
-.sticky{
-    position: sticky;
-    top: 0;
-    z-index: 999;
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
-.navbar{
-
-    .navbar-brand:hover{
-        color: $color-hover;
-        @include trans
+.navbar {
+  .navbar-brand:hover {
+    color: $color-hover;
+    @include trans;
+  }
+  .btn-add-cart {
+    @include btnStyle($color-primary, $fs-add);
+    @include trans;
+    &:hover {
+      color: $color-hover;
+      @include trans;
     }
-    .btn-add-cart
-    {
-        @include btnStyle($color-primary,$fs-add);
-        &:hover{
-            color:$color-hover;
-          }
-    }
-   
+  }
+}
+//replace BS5
+.navbar-expand-md .navbar-collapse {
+  display: flex;
+  flex-basis: auto;
 }

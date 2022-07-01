@@ -7,14 +7,13 @@
         @include txtStyle($fs-1, $fw-1, $color-primary);
       }
       .price{
-        p {
+        span {
           @include txtStyle($fs-2, $fw-2, $color-primary);
         }
         .discount{
           @include txtStyle($fs-1, $fw-1, $color-dis);
-          top: 0;
-          right: 40%;
-          background: rgba($color: #e88282, $alpha: 0.2)
+          background: rgba($color: #e88282, $alpha: 0.2);
+          padding: 4px
         }
       }
        
@@ -36,3 +35,4 @@
   }
   
 }
+

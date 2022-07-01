@@ -1,25 +1,93 @@
-.cover{
+.cover {
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  z-index: 1080;
+  .sidebar {
     width: 100%;
     height: 100%;
-    visibility: hidden;
-    z-index: 1080;
-    .sidebar{
-        width: 60%;
-        height: 100%;
-        background-color: $color-primary;
-        box-shadow: 0 3px 6px 0 #0000000d;
-        right: -100%;
+    background-color: $color-primary;
+    box-shadow: 0 3px 6px 0 #0000000d;
+    right: -100%;
+    @include trans;
+    .slidebar-title {
+      .btn-close-cart {
+        @include btnStyle($color-dark, $fs-cls);
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
         @include trans;
-        .slidebar-title{
-            .btn-close-cart{
-                @include btnStyle($color-dark,$fs-cls);
-                right: 20px;
-                top: 50%;
-                transform: translateY(-50%);
-                &:hover{
-                    color:$color-hover;
-                  }
-            }
+        &:hover {
+          color: $color-hover;
+          @include trans;
         }
+      }
     }
+    .tblProduct {
+      th,td{
+        font-size: $fs-1;
+      }
+      .btn-del-product {
+        @include btnStyle($color-dark, $fs-2);
+        @include trans;
+        &:hover {
+          color: $color-hover;
+          @include trans;
+        }
+      }
+      .btn-number{
+        @include btnStyle($color-primary,$fs-1);
+        background-color : $color-dark;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        @include trans;
+        &:hover{
+            color: $color-hover;
+            @include trans;
+        }
+      }
+    }
+    .purchase {
+      .btn-purchase {
+        @include btnStyle($color-primary, $fs-1);
+        font-weight: $fw-1;
+        box-shadow: 0 0 0 48px $color-dark inset;
+        border-radius: $bd-1;
+        padding: $pd-2 $pd-1;
+        @include trans;
+        &:hover {
+          color: $color-hover;
+          box-shadow: 0 0 0 2px $color-dark inset;
+          @include trans;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cover {
+    .tblProduct {
+      .clear-tbl {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cover {
+    .sidebar {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .cover {
+    .sidebar {
+      width: 60%;
+    }
+  }
 }

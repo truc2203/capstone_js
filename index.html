@@ -34,9 +34,8 @@
           <div class="tblProduct" id="tlbProduct">
               <table class="table table-bordered">
                 <thead>
-                  <th>Hình ảnh</th>
+                  <th class="clear-tbl">Hình ảnh</th>
                   <th>Tên SP</th>
-                  <th>Giá</th>
                   <th>Số lượng</th>  
                   <th>Giảm giá</th>
                   <th>Tổng tiền</th>              
@@ -44,17 +43,30 @@
                 <tbody id="tblList">
                   <!-- Render using Js -->
                   <tr>
-                    <td>Hinh 1</td>
+                    <td class="clear-tbl">Hinh 1</td>
                     <td>Iphone 13</td>
-                    <td>$1.999</td>
-                    <td>2</td>
+                    <td>
+                      <button class="btn-number me-1"><i class="fa-solid fa-plus"></i></button>
+                      2
+                      <button class="btn-number ms-1"><i class="fa-solid fa-minus"></i></button>
+                    </td>
                     <td>10%</td>
                     <td>$3.998</td>
+                    <td><button class="btn-del-product"><i class="fa-solid fa-trash"></i></button></td>
                   </tr>
                 </tbody>
               </table>
           </div>
           <!-- END TABLE -->
+
+          <!-- TOTAL CASH -->
+          <div class="total pt-4 text-end">
+              <h6>Tổng Tiền : $</h6>
+          </div>
+          <div class="purchase text-end py-4">
+            <button class="btn-purchase me-3">PURCHASE <i class="fa-solid fa-credit-card"></i></button>
+            <button class="btn-purchase">CLEAR <i class="fa-solid fa-trash-can"></i></button>
+          </div>
       </div>
     </div>
     <!-- HEADER -->
@@ -62,13 +74,6 @@
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid px-4">
           <a href="#" class="navbar-brand n">Capstone JS</a>
-          <button
-            class="navbar-toggler"
-            data-toggle="collapse"
-            data-target="#myMenu"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
           <div class="collapse navbar-collapse justify-content-end" id="myMenu">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
@@ -95,9 +100,9 @@
 
     <!-- LIST -->
     <section class="container-m">
-      <div class="list py-5">
+      <div class="list py-5 px-4 px-xl-0">
         <div class="list-cover d-flex flex-wrap">
-          <div class="col-3 px-3 pb-4">
+          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
             <div class="list-card p-4 border border-light rounded-3">
               <div class="list-img">
                 <img
@@ -112,8 +117,8 @@
                     <a href="">Iphone</a>
                   </div>
                   <div class="price position-relative">
-                    <p>13.000.0000</p>
-                    <div class="discount position-absolute rounded-3">-30%</div>
+                    <span>13.000.0000</span>
+                    <span class="discount rounded-3">-30%</span>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>
@@ -127,34 +132,13 @@
                   id="btnAddToCart"
                   type="button"
                   class="btn-add-cart position-absolute"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
                 >
                   <i class="fa-solid fa-cart-arrow-down"></i>
                 </button>
-                <!-- MODAL ADD TO CATEGORY -->
-                <div
-                  class="modal fade"
-                  id="exampleModal"
-                  tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h6 class="modal-title m-auto" id="showAddModal">
-                          Đã thêm Iphone vào giỏ hàng
-                        </h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- END MODAL -->
               </div>
             </div>
           </div>
-          <div class="col-3 px-3 pb-4">
+          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
             <div class="list-card p-4 border border-light rounded-3">
               <div class="list-img">
                 <img
@@ -169,8 +153,8 @@
                     <a href="">Iphone</a>
                   </div>
                   <div class="price position-relative">
-                    <p>13.000.0000</p>
-                    <div class="discount position-absolute rounded-3">-30%</div>
+                    <span>13.000.0000</span>
+                    <span class="discount rounded-3">-30%</span>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>
@@ -184,33 +168,16 @@
                   id="btnAddToCart"
                   type="button"
                   class="btn-add-cart position-absolute"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
+
                 >
                   <i class="fa-solid fa-cart-arrow-down"></i>
                 </button>
                 <!-- Modal -->
-                <div
-                  class="modal fade"
-                  id="exampleModal"
-                  tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h6 class="modal-title m-auto" id="showAddModal">
-                          Đã thêm Iphone vào giỏ hàng
-                        </h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+               
               </div>
             </div>
           </div>
-          <div class="col-3 px-3 pb-4">
+          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
             <div class="list-card p-4 border border-light rounded-3">
               <div class="list-img">
                 <img
@@ -225,8 +192,8 @@
                     <a href="">Iphone</a>
                   </div>
                   <div class="price position-relative">
-                    <p>13.000.0000</p>
-                    <div class="discount position-absolute rounded-3">-30%</div>
+                    <span>13.000.0000</span>
+                    <span class="discount rounded-3">-30%</span>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>
@@ -240,33 +207,15 @@
                   id="btnAddToCart"
                   type="button"
                   class="btn-add-cart position-absolute"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
+               
                 >
                   <i class="fa-solid fa-cart-arrow-down"></i>
                 </button>
-                <!-- Modal -->
-                <div
-                  class="modal fade"
-                  id="exampleModal"
-                  tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h6 class="modal-title m-auto" id="showAddModal">
-                          Đã thêm Iphone vào giỏ hàng
-                        </h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              
               </div>
             </div>
           </div>
-          <div class="col-3 px-3 pb-4">
+          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
             <div class="list-card p-4 border border-light rounded-3">
               <div class="list-img">
                 <img
@@ -281,8 +230,8 @@
                     <a href="">Iphone</a>
                   </div>
                   <div class="price position-relative">
-                    <p>13.000.0000</p>
-                    <div class="discount position-absolute rounded-3">-30%</div>
+                    <span>13.000.0000</span>
+                    <span class="discount rounded-3">-30%</span>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>
@@ -296,33 +245,15 @@
                   id="btnAddToCart"
                   type="button"
                   class="btn-add-cart position-absolute"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
+        
                 >
                   <i class="fa-solid fa-cart-arrow-down"></i>
                 </button>
-                <!-- Modal -->
-                <div
-                  class="modal fade"
-                  id="exampleModal"
-                  tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h6 class="modal-title m-auto" id="showAddModal">
-                          Đã thêm Iphone vào giỏ hàng
-                        </h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+               
               </div>
             </div>
           </div>
-          <div class="col-3 px-3 pb-4">
+          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
             <div class="list-card p-4 border border-light rounded-3">
               <div class="list-img">
                 <img
@@ -337,8 +268,8 @@
                     <a href="">Iphone</a>
                   </div>
                   <div class="price position-relative">
-                    <p>13.000.0000</p>
-                    <div class="discount position-absolute rounded-3">-30%</div>
+                    <span>13.000.0000</span>
+                    <span class="discount rounded-3">-30%</span>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>
@@ -352,33 +283,15 @@
                   id="btnAddToCart"
                   type="button"
                   class="btn-add-cart position-absolute"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
+              
                 >
                   <i class="fa-solid fa-cart-arrow-down"></i>
                 </button>
-                <!-- Modal -->
-                <div
-                  class="modal fade"
-                  id="exampleModal"
-                  tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h6 class="modal-title m-auto" id="showAddModal">
-                          Đã thêm Iphone vào giỏ hàng
-                        </h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+               
               </div>
             </div>
           </div>
-          <div class="col-3 px-3 pb-4">
+          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
             <div class="list-card p-4 border border-light rounded-3">
               <div class="list-img">
                 <img
@@ -393,8 +306,8 @@
                     <a href="">Iphone</a>
                   </div>
                   <div class="price position-relative">
-                    <p>13.000.0000</p>
-                    <div class="discount position-absolute rounded-3">-30%</div>
+                    <span>13.000.0000</span>
+                    <span class="discount rounded-3">-30%</span>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>
@@ -408,33 +321,15 @@
                   id="btnAddToCart"
                   type="button"
                   class="btn-add-cart position-absolute"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
+                
                 >
                   <i class="fa-solid fa-cart-arrow-down"></i>
                 </button>
-                <!-- Modal -->
-                <div
-                  class="modal fade"
-                  id="exampleModal"
-                  tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h6 class="modal-title m-auto" id="showAddModal">
-                          Đã thêm Iphone vào giỏ hàng
-                        </h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+               
               </div>
             </div>
           </div>
-          <div class="col-3 px-3 pb-4">
+          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
             <div class="list-card p-4 border border-light rounded-3">
               <div class="list-img">
                 <img
@@ -449,8 +344,8 @@
                     <a href="">Iphone</a>
                   </div>
                   <div class="price position-relative">
-                    <p>13.000.0000</p>
-                    <div class="discount position-absolute rounded-3">-30%</div>
+                    <span>13.000.0000</span>
+                    <span class="discount rounded-3">-30%</span>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>
@@ -464,33 +359,16 @@
                   id="btnAddToCart"
                   type="button"
                   class="btn-add-cart position-absolute"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
+               
                 >
                   <i class="fa-solid fa-cart-arrow-down"></i>
                 </button>
                 <!-- Modal -->
-                <div
-                  class="modal fade"
-                  id="exampleModal"
-                  tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h6 class="modal-title m-auto" id="showAddModal">
-                          Đã thêm Iphone vào giỏ hàng
-                        </h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+               
               </div>
             </div>
           </div>
-          <div class="col-3 px-3 pb-4">
+          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
             <div class="list-card p-4 border border-light rounded-3">
               <div class="list-img">
                 <img
@@ -505,8 +383,8 @@
                     <a href="">Iphone</a>
                   </div>
                   <div class="price position-relative">
-                    <p>13.000.0000</p>
-                    <div class="discount position-absolute rounded-3">-30%</div>
+                    <span>13.000.0000</span>
+                    <span class="discount rounded-3">-30%</span>
                   </div>
                   <div class="star">
                     <i class="text-warning fa-solid fa-star"></i>
@@ -520,29 +398,11 @@
                   id="btnAddToCart"
                   type="button"
                   class="btn-add-cart position-absolute"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
+               
                 >
                   <i class="fa-solid fa-cart-arrow-down"></i>
                 </button>
-                <!-- Modal -->
-                <div
-                  class="modal fade"
-                  id="exampleModal"
-                  tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h6 class="modal-title m-auto" id="showAddModal">
-                          Đã thêm Iphone vào giỏ hàng
-                        </h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              
               </div>
             </div>
           </div>
