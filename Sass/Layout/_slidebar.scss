@@ -1,0 +1,26 @@
+.cover{
+    width: 100%;
+    height: 100%;
+
+    .sidebar{
+        width: 60%;
+        height: 100%;
+        z-index: 999;
+        background-color: $color-primary;
+        box-shadow: 0 3px 6px 0 #0000000d;
+        right: -100%;
+        position: absolute;
+        @include trans;
+        .slidebar-title{
+            .btn-close-cart{
+                @include btnStyle($color-dark,$fs-cls);
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                &:hover{
+                    color:$color-hover;
+                  }
+            }
+        }
+    }
+}

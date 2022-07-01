@@ -22,7 +22,17 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <body class="bg-radien">
+  <body class="bg-radien position-relative">
+        <!-- SIDEBAR -->
+    <div class="cover position-absolute">
+      <div id="show-slidebar" class="sidebar">
+          <div class="slidebar-title text-center py-4 position-relative">
+            <h3 >Giỏ hàng của bạn</h3>
+            <button id="btnCloseCart" type="button" class="position-absolute btn-close-cart"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+
+      </div>
+    </div>
     <!-- HEADER -->
     <div class="container-m">
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -42,43 +52,9 @@
                   id="btnShowCart"
                   type="button"
                   class="btn-add-cart"
-                  data-bs-toggle="modal"
-                  data-bs-target="#myCartegory"
                 >
                   <i class="fa-solid fa-cart-arrow-down"></i>
                 </button>
-                <!-- MODAL SHOW CARTEGORY -->
-                <div
-                  class="modal fade"
-                  id="myCartegory"
-                  tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                          Giỏ hàng của bạn
-                        </h5>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
-                      <div class="modal-body">...</div>
-                      <div class="modal-footer justify-content-between">
-                        <h6>Tổng tiền :</h6>
-                        <button type="button" class="btn btn-primary">
-                          Thanh Toán
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- END MODAL -->
               </li>
             </ul>
           </div>
@@ -86,6 +62,8 @@
       </nav>
     </div>
     <!-- END HEADER -->
+
+
 
     <!-- BANNER -->
     <section class="container-m">
@@ -555,6 +533,7 @@
       integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
       crossorigin="anonymous"
     ></script>
-    <script src="./Js/test.js"></script>
+    <script src="./Js/showCart.js"></script>
+    <script src="./Js/CloseCart.js"></script>
   </body>
 </html>
