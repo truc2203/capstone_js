@@ -38,34 +38,23 @@
                   <th>Tên SP</th>
                   <th>Số lượng</th>  
                   <th>Giảm giá</th>
-                  <th>Tổng tiền</th>              
+                  <th>Thành tiền</th>              
                 </thead>
                 <tbody id="tblList">
                   <!-- Render using Js -->
-                  <tr>
-                    <td class="clear-tbl">Hinh 1</td>
-                    <td>Iphone 13</td>
-                    <td>
-                      <button class="btn-number me-1"><i class="fa-solid fa-plus"></i></button>
-                      2
-                      <button class="btn-number ms-1"><i class="fa-solid fa-minus"></i></button>
-                    </td>
-                    <td>10%</td>
-                    <td>$3.998</td>
-                    <td><button class="btn-del-product"><i class="fa-solid fa-trash"></i></button></td>
-                  </tr>
+                  
                 </tbody>
               </table>
           </div>
           <!-- END TABLE -->
 
           <!-- TOTAL CASH -->
-          <div class="total pt-4 text-end">
-              <h6>Tổng Tiền : $</h6>
+          <div id="totalPay" class="total pt-4 text-end">
+              <!-- <h6>Tổng Tiền : $</h6> -->
           </div>
           <div class="purchase text-end py-4">
             <button class="btn-purchase me-3">PURCHASE <i class="fa-solid fa-credit-card"></i></button>
-            <button class="btn-purchase">CLEAR <i class="fa-solid fa-trash-can"></i></button>
+            <button id="btnClearAll" class="btn-purchase">CLEAR <i class="fa-solid fa-trash-can"></i></button>
           </div>
       </div>
     </div>
@@ -98,314 +87,23 @@
     </section>
     <!-- END BANNER -->
 
+    <!-- FILTER -->
+    <section class="container-m">
+      <div class="filter pt-5">
+        <select class="select-fil me-3" name="" id="slcBrand">
+          <option value="">Tất cả sản phẩm</option>
+          <option value="SAMSUNG">Samsung</option>
+          <option value="APPLE">Apple</option>
+          <option value="XIAOMI">Xiaomi</option>
+        </select>
+        <button id="btnFilterBrand" class="btn-filter">Lọc</button>
+      </div>
+    </section>
+
     <!-- LIST -->
     <section class="container-m">
-      <div class="list py-5 px-4 px-xl-0">
-        <div class="list-cover d-flex flex-wrap">
-          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
-            <div class="list-card p-4 border border-light rounded-3">
-              <div class="list-img">
-                <img
-                  class="w-100"
-                  src="./Img/iphone-13-pink-select-2021.webp"
-                  alt=""
-                />
-              </div>
-              <div class="list-info position-relative">
-                <div class="detail">
-                  <div class="name">
-                    <a href="">Iphone</a>
-                  </div>
-                  <div class="price position-relative">
-                    <span>13.000.0000</span>
-                    <span class="discount rounded-3">-30%</span>
-                  </div>
-                  <div class="star">
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                  </div>
-                </div>
-                <button
-                  id="btnAddToCart"
-                  type="button"
-                  class="btn-add-cart position-absolute"
-                >
-                  <i class="fa-solid fa-cart-arrow-down"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
-            <div class="list-card p-4 border border-light rounded-3">
-              <div class="list-img">
-                <img
-                  class="w-100"
-                  src="./Img/iphone-13-pink-select-2021.webp"
-                  alt=""
-                />
-              </div>
-              <div class="list-info position-relative">
-                <div class="detail">
-                  <div class="name">
-                    <a href="">Iphone</a>
-                  </div>
-                  <div class="price position-relative">
-                    <span>13.000.0000</span>
-                    <span class="discount rounded-3">-30%</span>
-                  </div>
-                  <div class="star">
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                  </div>
-                </div>
-                <button
-                  id="btnAddToCart"
-                  type="button"
-                  class="btn-add-cart position-absolute"
-
-                >
-                  <i class="fa-solid fa-cart-arrow-down"></i>
-                </button>
-                <!-- Modal -->
-               
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
-            <div class="list-card p-4 border border-light rounded-3">
-              <div class="list-img">
-                <img
-                  class="w-100"
-                  src="./Img/iphone-13-pink-select-2021.webp"
-                  alt=""
-                />
-              </div>
-              <div class="list-info position-relative">
-                <div class="detail">
-                  <div class="name">
-                    <a href="">Iphone</a>
-                  </div>
-                  <div class="price position-relative">
-                    <span>13.000.0000</span>
-                    <span class="discount rounded-3">-30%</span>
-                  </div>
-                  <div class="star">
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                  </div>
-                </div>
-                <button
-                  id="btnAddToCart"
-                  type="button"
-                  class="btn-add-cart position-absolute"
-               
-                >
-                  <i class="fa-solid fa-cart-arrow-down"></i>
-                </button>
-              
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
-            <div class="list-card p-4 border border-light rounded-3">
-              <div class="list-img">
-                <img
-                  class="w-100"
-                  src="./Img/iphone-13-pink-select-2021.webp"
-                  alt=""
-                />
-              </div>
-              <div class="list-info position-relative">
-                <div class="detail">
-                  <div class="name">
-                    <a href="">Iphone</a>
-                  </div>
-                  <div class="price position-relative">
-                    <span>13.000.0000</span>
-                    <span class="discount rounded-3">-30%</span>
-                  </div>
-                  <div class="star">
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                  </div>
-                </div>
-                <button
-                  id="btnAddToCart"
-                  type="button"
-                  class="btn-add-cart position-absolute"
-        
-                >
-                  <i class="fa-solid fa-cart-arrow-down"></i>
-                </button>
-               
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
-            <div class="list-card p-4 border border-light rounded-3">
-              <div class="list-img">
-                <img
-                  class="w-100"
-                  src="./Img/iphone-13-pink-select-2021.webp"
-                  alt=""
-                />
-              </div>
-              <div class="list-info position-relative">
-                <div class="detail">
-                  <div class="name">
-                    <a href="">Iphone</a>
-                  </div>
-                  <div class="price position-relative">
-                    <span>13.000.0000</span>
-                    <span class="discount rounded-3">-30%</span>
-                  </div>
-                  <div class="star">
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                  </div>
-                </div>
-                <button
-                  id="btnAddToCart"
-                  type="button"
-                  class="btn-add-cart position-absolute"
-              
-                >
-                  <i class="fa-solid fa-cart-arrow-down"></i>
-                </button>
-               
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
-            <div class="list-card p-4 border border-light rounded-3">
-              <div class="list-img">
-                <img
-                  class="w-100"
-                  src="./Img/iphone-13-pink-select-2021.webp"
-                  alt=""
-                />
-              </div>
-              <div class="list-info position-relative">
-                <div class="detail">
-                  <div class="name">
-                    <a href="">Iphone</a>
-                  </div>
-                  <div class="price position-relative">
-                    <span>13.000.0000</span>
-                    <span class="discount rounded-3">-30%</span>
-                  </div>
-                  <div class="star">
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                  </div>
-                </div>
-                <button
-                  id="btnAddToCart"
-                  type="button"
-                  class="btn-add-cart position-absolute"
-                
-                >
-                  <i class="fa-solid fa-cart-arrow-down"></i>
-                </button>
-               
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
-            <div class="list-card p-4 border border-light rounded-3">
-              <div class="list-img">
-                <img
-                  class="w-100"
-                  src="./Img/iphone-13-pink-select-2021.webp"
-                  alt=""
-                />
-              </div>
-              <div class="list-info position-relative">
-                <div class="detail">
-                  <div class="name">
-                    <a href="">Iphone</a>
-                  </div>
-                  <div class="price position-relative">
-                    <span>13.000.0000</span>
-                    <span class="discount rounded-3">-30%</span>
-                  </div>
-                  <div class="star">
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                  </div>
-                </div>
-                <button
-                  id="btnAddToCart"
-                  type="button"
-                  class="btn-add-cart position-absolute"
-               
-                >
-                  <i class="fa-solid fa-cart-arrow-down"></i>
-                </button>
-                <!-- Modal -->
-               
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3 px-3 pb-4">
-            <div class="list-card p-4 border border-light rounded-3">
-              <div class="list-img">
-                <img
-                  class="w-100"
-                  src="./Img/iphone-13-pink-select-2021.webp"
-                  alt=""
-                />
-              </div>
-              <div class="list-info position-relative">
-                <div class="detail">
-                  <div class="name">
-                    <a href="">Iphone</a>
-                  </div>
-                  <div class="price position-relative">
-                    <span>13.000.0000</span>
-                    <span class="discount rounded-3">-30%</span>
-                  </div>
-                  <div class="star">
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                    <i class="text-warning fa-solid fa-star"></i>
-                  </div>
-                </div>
-                <button
-                  id="btnAddToCart"
-                  type="button"
-                  class="btn-add-cart position-absolute"
-               
-                >
-                  <i class="fa-solid fa-cart-arrow-down"></i>
-                </button>
-              
-              </div>
-            </div>
-          </div>
+      <div class="list pt-5 px-4 px-xl-0">
+        <div id="homePageRender" class="list-cover d-flex flex-wrap">
         </div>
       </div>
     </section>
@@ -423,7 +121,23 @@
       integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
       crossorigin="anonymous"
     ></script>
-    <script src="./Js/showCart.js"></script>
-    <script src="./Js/CloseCart.js"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Link -->
+    <script src="./Js/View/ShowCart.js"></script>
+    <script src="./Js/View/CloseCart.js"></script>
+    <script src="./Js/API/ProductsAPI.js"></script>
+    <script src="./Js/Models/Products.js"></script>
+    <script src="./Js/Render/RenderHomePage.js"></script>
+    <script src="./Js/Render/RenderCartPage.js"></script>
+    <script src="./Js/Controllers/Web/AddProductToCart.js"></script>
+    <script src="./Js/Controllers/Web/LocalStorage.js"></script>
+    <script src="./Js/Controllers/Web/Filter.js"></script>
+    <script src="./Js/Controllers/Handle/ClearAllProductFromCart.js"></script>
+    <script src="./Js/Controllers/Handle/DelProductFromCart.js"></script>
+    <script src="./Js/Controllers/Handle/IncreaseProductFromCart.js"></script>
+    <script src="./Js/Controllers/Handle/ReduceProductFromCart.js"></script>
+    <script src="./Js/Controllers/Handle/HandleActionCart.js"></script>
+
   </body>
 </html>

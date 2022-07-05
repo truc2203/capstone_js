@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Danh sách sản phẩm</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    .sp-noti{
+      background: linear-gradient(330deg, #e5da18 0%, #6a54cc 25%, #9e297f 50%, #7809e8 75%, #e11313 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+      font-size: 13px;
+      margin-top: 4px;
+      font-weight: 500;
+  }
+  </style>
+  <body>
+    <div class="container" style="max-width: 100%;">
+      <nav style="display: none;" class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        ></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="dropdownId"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Dropdown</a
+              >
+              <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <a class="dropdown-item" href="#">Action 1</a>
+                <a class="dropdown-item" href="#">Action 2</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <header class="display-4 my-4 sp-noti" style="font-size: 56px;">
+        CAPSTONE JS
+      </header>
+      <!-- Phan tab menu -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            href="#DanhSachSP"
+            role="tab"
+            data-toggle="tab"
+            >Danh sách sản phẩm</a
+          >
+        </li>
+        
+      </ul>
+      <br />
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <!--Danh sách sản phẩm -->
+        <div role="tabpanel" class="tab-pane  in active" id="DanhSachSP">
+          <div class="row">
+            <div class="col-md-8">
+              <!-- BEGIN BUTTOM THÊM MỚI -->
+              <button
+                id="btnThem"
+                class="btn btn-success sp-noti"
+                style="font-size: 16px;"
+                data-toggle="modal"
+                data-target="#myModal"
+              >
+                <i class="fa fa-plus mr-1"></i>
+                Thêm Mới
+              </button>
+              <!-- END BUTTON THÊM MỚI -->
+            </div>
+            <div class="col-md-4">
+              <!-- BEGIN TÌM KIẾM -->
+              <div class="input-group mb-3">
+                <input
+                  id="txtSearch"
+                  type="text"
+                  class="form-control"
+                  placeholder="Nhập tài khoản "
+                  aria-label="Recipient's username"
+                  aria-describedby="basic-addon2"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon2"
+                    ><i class="fa fa-search"></i
+                  ></span>
+                </div>
+              </div>
+              <!-- END TÌM KIẾM -->
+            </div>
+          </div>
+          <div class="clear-fix"></div>
+          <div class="tblSanPham" id="tblSanPham">
+            <!-- BEGIN TABLE SẢN PHẨM -->
+            <table class="table table-bordered">
+              <thead>
+                <th>ID</th>
+                <th>Thương hiệu</th>
+                <th>Hình ảnh</th>
+                <th>Tên SP</th>
+                <th>Giá</th>
+                <th>Khuyến mãi</th>
+                <th>Mô tả SP</th>
+              </thead>
+              <tbody id="tblDanhSach"></tbody>
+            </table>
+            <!-- END TABLE SẢN PHẨM -->
+          </div>
+          <br />
+        </div>
+        <!-- Kết thúc danh sách sản phẩm -->       
+      </div>
+
+      <!--KetThuc Tabmenu-->
+
+      <!-- The Modal -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Modal Heading</h4>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <!-- Lưu id sản phẩm -->
+              <input type="text" id="idNumber" hidden>
+              <div class="form-group">
+                <label for="">Thương hiệu</label>
+                <select id="idBrand" class="form-select w-100" aria-label="Default select example">
+                  <option selected>Chọn thương hiệu</option>
+                  <option value="CHINASE">SAMSUNG</option>
+                  <option value="ENGLISH">APPLE</option>
+                  <option value="FRENCH">XIAOMI</option>
+                </select>
+                <span class="sp-noti" id="brandNoti" ></span>
+              </div>
+              <div class="form-group">
+                <label>Hình ảnh</label>
+                <input
+                  id="idPic"
+                  class="form-control"
+                  placeholder="Chọn hình ảnh"
+                />
+                <span class="sp-noti" id="picNoti" ></span>
+              </div>
+              <div class="form-group">
+                <label>Tên SP</label>
+                <input
+                  id="idName"
+                  class="form-control"
+                  placeholder="Nhập tên sản phẩm"
+                />
+                <span class="sp-noti" id="nameNoti" ></span>
+              </div>             
+              <div class="form-group">
+                <label>Giá</label>
+                <input
+                  id="idPrice"
+                  class="form-control"
+                  placeholder="Nhập giá tiền"
+                />
+                <span class="sp-noti" id="priceNoti" ></span>
+              </div>
+              <div class="form-group">
+                <label for="">Khuyến mãi</label>
+                <input
+                id="idDiscount"
+                class="form-control"
+                placeholder="Nhập % khuyến mãi"
+              />
+              <span class="sp-noti" id="emailNoti" ></span>
+              </div>
+              <div class="form-group">
+                <label for="">Mô tả</label>
+                <input
+                id="idDesc"
+                class="form-control"
+                placeholder="Nhập mô tả sản phẩm"
+              />
+              <span class="sp-noti" id="descNoti" ></span>
+              </div>
+            <!-- Modal footer -->
+            <div class="modal-footer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container"></div>
+    <style>
+      #container {
+        min-width: 310px;
+        max-width: 800px;
+        height: 400px;
+        margin: 0 auto;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <!-- Link -->
+    <script src="./Js/API/ProductsAPI.js"></script>
+    <script src="./Js/Models/Products.js"></script>
+    <script src="./Js/Controllers/Manager/Main.js"></script>
+  </body>
+</html>

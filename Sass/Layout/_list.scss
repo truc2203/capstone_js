@@ -1,38 +1,47 @@
-
 .list {
-  .list-card{
+  .list-card {
     overflow: hidden;
+    background: $color-primary;
+    &:hover .list-img {
+      transform: scale(1.1);
+      @include trans;
+    }
+    // &:hover .list-info .desc {
+    //   display: block;
+    //   @include trans;
+    // }
     .list-info {
+      div {
+        padding: 4px 0;
+      }
       .name a {
-        @include txtStyle($fs-1, $fw-1, $color-primary);
+        @include txtStyle($fs-1, $fw-1, $color-dark);
       }
-      .price{
+      .price {
         span {
-          @include txtStyle($fs-2, $fw-2, $color-primary);
+          @include txtStyle($fs-2, $fw-1, $color-dark);
         }
-        .discount{
+        .discount {
           @include txtStyle($fs-1, $fw-1, $color-dis);
-          background: rgba($color: #e88282, $alpha: 0.2);
-          padding: 4px
+          background: rgba($color: #dc0808, $alpha: 0.2);
+          padding: 4px;
         }
       }
-       
+      .desc {
+        @include txtStyle($fs-1, $fw-1, $color-dark);
+        // display: none;
+      }
       .btn-add-cart {
-        @include btnStyle($color-primary,$fs-add);
+        @include btnStyle($color-dark, $fs-add);
         @include trans;
-        &:hover{
-          color:$color-hover;
+        top: 6px;
+        &:hover {
+          color: $color-hover;
         }
       }
     }
     .list-img {
       @include trans;
-      &:hover {
-        transform: scale(1.1);
-        @include trans;
-      }
     }
   }
-  
 }
-

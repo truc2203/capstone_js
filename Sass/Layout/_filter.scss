@@ -1,0 +1,26 @@
+.filter{
+    padding : 0 48px;
+    .select-fil{
+        padding: $pd-4 $pd-2;
+        border-radius: $bd-1;
+    }
+    .btn-filter{
+        @include btnStyle($color-dark, $fs-1);
+        font-weight: $fw-1;
+        box-shadow: 0 0 0 48px $color-primary inset;
+        border-radius: $bd-1;
+        padding: $pd-4 $pd-2;
+        @include trans;
+        &:hover {
+          color: $color-primary;
+          box-shadow: 0 0 0 2px $color-primary inset;
+          @include trans;
+        }
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .filter{
+        padding: 0 $pd-1;
+    }
+}

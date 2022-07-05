@@ -78,37 +78,56 @@ html li, body li {
 
 .list .list-card {
   overflow: hidden;
+  background: #ffffff;
+}
+
+.list .list-card:hover .list-img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.list .list-card .list-info div {
+  padding: 4px 0;
 }
 
 .list .list-card .list-info .name a {
   font-size: 14px;
   font-weight: 600;
-  color: #ffffff;
+  color: #000000;
 }
 
 .list .list-card .list-info .price span {
   font-size: 16px;
-  font-weight: 400;
-  color: #ffffff;
+  font-weight: 600;
+  color: #000000;
 }
 
 .list .list-card .list-info .price .discount {
   font-size: 14px;
   font-weight: 600;
-  color: #f6fa05;
-  background: rgba(232, 130, 130, 0.2);
+  color: #2e05fa;
+  background: rgba(220, 8, 8, 0.2);
   padding: 4px;
+}
+
+.list .list-card .list-info .desc {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
 }
 
 .list .list-card .list-info .btn-add-cart {
   top: 0;
   right: 0;
-  color: #ffffff;
+  color: #000000;
   font-size: 20px;
   border: none;
   background: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  top: 6px;
 }
 
 .list .list-card .list-info .btn-add-cart:hover {
@@ -116,13 +135,6 @@ html li, body li {
 }
 
 .list .list-card .list-img {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.list .list-card .list-img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -247,6 +259,45 @@ html li, body li {
 @media screen and (min-width: 992px) {
   .cover .sidebar {
     width: 60%;
+  }
+}
+
+.filter {
+  padding: 0 48px;
+}
+
+.filter .select-fil {
+  padding: 8px 16px;
+  border-radius: 16px;
+}
+
+.filter .btn-filter {
+  top: 0;
+  right: 0;
+  color: #000000;
+  font-size: 14px;
+  border: none;
+  background: none;
+  font-weight: 600;
+  -webkit-box-shadow: 0 0 0 48px #ffffff inset;
+          box-shadow: 0 0 0 48px #ffffff inset;
+  border-radius: 16px;
+  padding: 8px 16px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.filter .btn-filter:hover {
+  color: #ffffff;
+  -webkit-box-shadow: 0 0 0 2px #ffffff inset;
+          box-shadow: 0 0 0 2px #ffffff inset;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 1200px) {
+  .filter {
+    padding: 0 24px;
   }
 }
 /*# sourceMappingURL=main.css.map */
