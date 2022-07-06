@@ -2,7 +2,6 @@
 
 //Array chứa tổng tiền tất cả sản phẩm
 const arrTotalPay = []
-
 const cartRender = (products) => {
   let totalPay = 0
   let cart = "";
@@ -15,7 +14,6 @@ const cartRender = (products) => {
     products.price,
     products.discount,
     products.desc,
-    products.total
   )
   
   cart += `<tr>
@@ -25,7 +23,7 @@ const cartRender = (products) => {
         <td>${product.name}</td>
         <td>
           <button data-type="increase" data-id="${product.id}" class="btn-number me-1"><i class="fa-solid fa-plus"></i></button>
-          ${parseInt(product.amount)}
+          ${product.amount}
           <button data-type="reduce" data-id="${product.id}" class="btn-number ms-1"><i class="fa-solid fa-minus"></i></button>
         </td>
         <td>${product.discount}%</td>

@@ -10,7 +10,7 @@ const APIGetProducts = (search) =>
   });
 
 //Lay chi tiet san pham
-const APIAddProduct = (producId) =>
+const APIAddProductToCart = (producId) =>
   axios({
     url: `${baseUrl}/${producId}`,
     method: "GET",
@@ -23,6 +23,7 @@ const APIFilterBrand = (brand) =>
     method: "GET",
   });
 
+// Thêm sản phẩm (Admin)
 function apiAddProduct(product) {
   return axios({
     url: baseUrl,
@@ -30,12 +31,15 @@ function apiAddProduct(product) {
     data: product,
   });
 }
+//Xóa sản phẩm (Admin)
 function apiDeleteProducts(producId) {
   return axios({
     url: `${baseUrl}/${producId}`,
     method: "DELETE",
   });
 }
+
+//Update sản phẩm (Admin)
 function apiUpdateProducts(product) {
   return axios({
     url: `${baseUrl}/${product.id}`,
@@ -43,6 +47,8 @@ function apiUpdateProducts(product) {
     method: "PUT",
   });
 }
+
+// Lấy chi tiết sản phẩm (Admin)
 function apiGetProductDetail(productId) {
   return axios({
     url: `${baseUrl}/${productId}`,

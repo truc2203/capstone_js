@@ -13,7 +13,7 @@ const clearAllProduct = () =>{
     document.getElementById("tblList").innerHTML = '' 
     //Reset tổng tiền
     document.getElementById('totalPay').innerHTML =`<h6>Tổng Tiền : $</h6>`
-    console.log(localProducts)
+    // console.log(localProducts)
 }
 
 document.getElementById('btnClearAll').addEventListener('click',clearAllProduct)

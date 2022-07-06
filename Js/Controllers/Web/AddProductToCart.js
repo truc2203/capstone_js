@@ -7,12 +7,13 @@ const addCart = (event) => {
   if (id === null) {
     return;
   }
-  APIAddProduct(id).then(function (result) {
+  APIAddProductToCart(id).then(function (result) {
     let products = result.data;
     localProducts.push(products);
     //set localstorege
     localStorage.setItem("products", JSON.stringify(localProducts));
     cartRender(products);
+    console.log(localProducts)
   });
 };
 //Event click của btn thêm SP
