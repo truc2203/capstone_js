@@ -4,7 +4,6 @@ const increaseProductCart = (idProduct) => {
     product = localProducts[i];
     if (product.id === idProduct) {
       product.amount += 1;
-      console.log(product.amount);
       //Lưu localstorege
       localStorage.setItem("products", JSON.stringify(localProducts));
       //reset

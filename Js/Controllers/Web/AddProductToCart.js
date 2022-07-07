@@ -13,7 +13,6 @@ const addCart = (event) => {
     //set localstorege
     localStorage.setItem("products", JSON.stringify(localProducts));
     cartRender(products);
-    console.log(localProducts)
   });
 };
 //Event click của btn thêm SP

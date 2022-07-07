@@ -24,17 +24,18 @@ const cartRender = (products) => {
         <td>
           <button data-type="increase" data-id="${product.id}" class="btn-number me-1"><i class="fa-solid fa-plus"></i></button>
           ${product.amount}
-          <button data-type="reduce" data-id="${product.id}" class="btn-number ms-1"><i class="fa-solid fa-minus"></i></button>
+          <button data-type="reduce" data-id="${product.id}" id="btnDisabled" class="btn-number ms-1"><i class="fa-solid fa-minus"></i></button>
+          
         </td>
         <td>${product.discount}%</td>
         <td>$${Math.floor(product.getTotal())}</td>
-        <td><button data-type="delete" data-id="${product.id}" class="btn-del-product"><i class="fa-solid fa-trash"></i></button></td>
+        <td><button data-type="delete" data-id="${product.id}"  class="btn-del-product"><i class="fa-solid fa-trash"></i></button></td>
       </tr>
       `;
 
     //Duyệt mảng cộng dồn giá tất cả sản phẩm
     arrTotalPay.push(product.getTotal())
-    for( let i = 0;i< arrTotalPay.length ; i++){
+    for( let i = 0;i < arrTotalPay.length ; i++){
       totalPay += arrTotalPay[i]
     }
   //Render danh sách sản phẩm

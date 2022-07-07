@@ -1,6 +1,6 @@
 //
 class Products {
-  constructor(id,brand, pic, name, amount, price, discount, desc, total) {
+  constructor(id,brand, pic, name, amount, price, discount, desc) {
     (this.id = id),
       (this.pic = pic),
       this.brand = brand;
