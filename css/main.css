@@ -134,6 +134,17 @@ html li, body li {
   color: #e7740f;
 }
 
+.list .list-card .list-info .amount-product {
+  display: none;
+  top: 6px;
+  right: -13px;
+}
+
+.list .list-card .list-info .amount-product button, .list .list-card .list-info .amount-product span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .list .list-card .list-img {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;

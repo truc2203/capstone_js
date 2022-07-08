@@ -39,6 +39,15 @@
           color: $color-hover;
         }
       }
+      .amount-product{
+        display: none;
+        top: 6px;
+        right: -13px;
+        & button,span{
+          font-size: $fs-1;
+          font-weight: $fw-1;
+        }
+      }
     }
     .list-img {
       @include trans;

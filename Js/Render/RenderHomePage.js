@@ -23,7 +23,6 @@ function init(){
         renderWeb(products)
     })
 }
-
 const renderWeb = (products) =>{
     let homePage = ''
     for(let i in products)
@@ -60,12 +59,34 @@ const renderWeb = (products) =>{
               </div>
             </div>
             <button 
+              id="addCart${product.id}"
               type="button"
               data-id="${product.id}"
+              data-type="push"
               class="btn-add-cart position-absolute"
             >
               <i class="fa-solid fa-cart-arrow-down"></i>
-            </button>            
+            </button> 
+            <div class="showAmount${product.id} amount-product position-absolute">
+                
+                  <button
+                    type="button"
+                    data-id="${product.id}"
+                    data-type="increase-web"
+                    class="btn-add-cart pe-1"
+                  >
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                  <span id="countAmount${product.id}">1</span>
+                  <button
+                    type="button"
+                    data-id="${product.id}"
+                    data-type="reduce-web"
+                    class="btn-add-cart ps-1"
+                  >
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                </div>           
           </div>
 
         </div>
