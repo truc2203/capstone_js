@@ -4,7 +4,8 @@ const deleteProductCart = (idProduct) => {
     let product = localProducts[i];
     if (product.id === idProduct) {
       localProducts.splice(i, 1);
-      console.log(localProducts);
+      document.getElementById(`addCart${product.id}`).style.display = 'Block'
+      document.querySelector(`.showAmount${product.id}`).style.display = 'None'
       localStorage.setItem("products", JSON.stringify(localProducts));
       document.getElementById("tblList").innerHTML = "";
       localRender();

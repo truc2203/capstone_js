@@ -7,12 +7,14 @@ const clearAllProduct = () =>{
     }
     //Xóa toàn bộ mảng
     localProducts.splice(0,index)
+    //Reset giao diện web
+    init()
     //set local storage
     localStorage.setItem("products", JSON.stringify(localProducts));
     //Reset danh sách sản phẩm
     document.getElementById("tblList").innerHTML = '' 
     //Reset tổng tiền
-    document.getElementById('totalPay').innerHTML =`<h6>Tổng Tiền : $</h6>`
+    document.getElementById('totalPay').innerHTML =`<h6>Tổng Tiền : 0$</h6>`
     // console.log(localProducts)
 }
 

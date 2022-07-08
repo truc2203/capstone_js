@@ -29,7 +29,7 @@ const renderWeb = (products) =>{
     {
         let product = products[i]
         homePage += `<div class="col-12 col-sm-6 col-lg-4 col-xl-3 px-4 pb-5">
-        <div class="list-card p-4 border rounded-3">
+        <div class="list-card p-3 border rounded-3">
           <div class="list-img">
             <img  
               style="height:240px"         
@@ -73,7 +73,7 @@ const renderWeb = (products) =>{
                     type="button"
                     data-id="${product.id}"
                     data-type="increase-web"
-                    class="btn-add-cart pe-1"
+                    class="btn-add-cart"
                   >
                     <i class="fa-solid fa-plus"></i>
                   </button>
@@ -82,7 +82,7 @@ const renderWeb = (products) =>{
                     type="button"
                     data-id="${product.id}"
                     data-type="reduce-web"
-                    class="btn-add-cart ps-1"
+                    class="btn-add-cart"
                   >
                     <i class="fa-solid fa-minus"></i>
                   </button>

@@ -4,12 +4,21 @@ const increaseProductCart = (idProduct) => {
     product = localProducts[i];
     if (product.id === idProduct) {
       product.amount += 1;
+      //Tăng só lượng sản phẩm thêm 1 và render ra giao diện web
+      document.getElementById(`countAmount${product.id}`).innerHTML = `${product.amount}`
+      console.log(product.amount);
+      if(product.amount > 1)
+      {
+        document.getElementById(`addCart${product.id}`).style.display = 'None'
+        document.querySelector(`.showAmount${product.id}`).style.display = 'Block'
+      }
       //Lưu localstorege
       localStorage.setItem("products", JSON.stringify(localProducts));
       //reset
       document.getElementById("tblList").innerHTML = "";
-      //render lại giao diện
+      //render lại giao diện giỏ hàng
       localRender();
+   
     }
     // cartRender(product);
   }

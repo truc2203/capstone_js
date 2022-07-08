@@ -1,6 +1,5 @@
 //Array localstorege
 let localProducts = [];
-let countAmount = 1
 
 //Thêm sản phẩm vào giỏ hàng
 const addCart = (event) => {
@@ -24,24 +23,10 @@ const addCart = (event) => {
   if(type === "increase-web")
   {
     increaseProductCart(id)
-    document.getElementById(`countAmount${id}`).innerHTML = `${countAmount += 1}`
-    if(countAmount > 1)
-    {
-      document.getElementById(`addCart${id}`).style.display = 'None'
-      document.querySelector(`.showAmount${id}`).style.display = 'Block'
-    }
   }
   if(type === "reduce-web")
   {
     reduceProductCart(id)
-    document.getElementById(`countAmount${id}`).innerHTML = `${countAmount -= 1}`
-    if(countAmount < 1)
-    {
-      document.getElementById(`countAmount${id}`).innerHTML = `${countAmount = 1}`
-      deleteProductCart(id)
-      document.getElementById(`addCart${id}`).style.display = 'Block'
-      document.querySelector(`.showAmount${id}`).style.display = 'None'
-    }
   }
 };
 //Event click của btn thêm SP
