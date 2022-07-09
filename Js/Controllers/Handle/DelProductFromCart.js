@@ -8,6 +8,16 @@ const deleteProductCart = (idProduct) => {
       document.querySelector(`.showAmount${product.id}`).style.display = 'None'
       localStorage.setItem("products", JSON.stringify(localProducts));
       document.getElementById("tblList").innerHTML = "";
+      countAmount -= 1
+      if(countAmount < 1)
+          {
+            document.querySelector('.sub-cart').style.display = "none"
+            document.querySelector('.sub-cart').innerHTML = countAmount
+          }
+          else{
+            document.querySelector('.sub-cart').style.display = "block"
+            document.querySelector('.sub-cart').innerHTML = countAmount
+          }
       localRender();
       if(localProducts.length < 1)
       {

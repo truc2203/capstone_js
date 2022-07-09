@@ -10,6 +10,7 @@ const addCart = (event) => {
   }
   if(type === "push")
   {
+  
     APIAddProductToCart(id).then(function (result) {
       let products = result.data;
       localProducts.push(products);
@@ -17,6 +18,9 @@ const addCart = (event) => {
       localStorage.setItem("products", JSON.stringify(localProducts));
       cartRender(products);
     });
+    countAmount += 1
+    document.querySelector('.sub-cart').style.display = "block"
+    document.querySelector('.sub-cart').innerHTML = countAmount
     document.getElementById(`addCart${id}`).style.display = 'None'
     document.querySelector(`.showAmount${id}`).style.display = 'Block'
   }

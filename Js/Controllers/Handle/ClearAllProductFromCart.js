@@ -16,6 +16,9 @@ const clearAllProduct = () =>{
     //Reset tổng tiền
     document.getElementById('totalPay').innerHTML =`<h6>Tổng Tiền : 0$</h6>`
     // console.log(localProducts)
+    countAmount = 0
+    document.querySelector('.sub-cart').style.display = "none"
+    document.querySelector('.sub-cart').innerHTML = countAmount
 }
 
 document.getElementById('btnClearAll').addEventListener('click',clearAllProduct)

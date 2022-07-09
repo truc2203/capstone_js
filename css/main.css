@@ -70,6 +70,21 @@ html li, body li {
   transition: all 0.3s;
 }
 
+.navbar .sub-cart {
+  top: 8px;
+  right: 12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #e7740f;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  line-height: 20px;
+  margin-top: auto;
+  display: none;
+}
+
 .navbar-expand-md .navbar-collapse {
   display: -webkit-box;
   display: -ms-flexbox;

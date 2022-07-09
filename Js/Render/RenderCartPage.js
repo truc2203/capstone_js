@@ -2,6 +2,7 @@
 
 //Array chứa tổng tiền tất cả sản phẩm
 const arrTotalPay = []
+let countAmount = 0
 const cartRender = (products) => {
   let totalPay = 0
   let cart = "";
