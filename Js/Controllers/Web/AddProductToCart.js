@@ -27,10 +27,12 @@ const addCart = (event) => {
   if(type === "increase-web")
   {
     increaseProductCart(id)
+    
   }
   if(type === "reduce-web")
   {
     reduceProductCart(id)
+   
   }
 };
 //Event click của btn thêm SP

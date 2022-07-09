@@ -8,7 +8,9 @@ const deleteProductCart = (idProduct) => {
       document.querySelector(`.showAmount${product.id}`).style.display = 'None'
       localStorage.setItem("products", JSON.stringify(localProducts));
       document.getElementById("tblList").innerHTML = "";
-      countAmount -= 1
+      countAmount -= product.amount
+      document.querySelector('.sub-cart').style.display = "block"
+      document.querySelector('.sub-cart').innerHTML = countAmount
       if(countAmount < 1)
           {
             document.querySelector('.sub-cart').style.display = "none"
