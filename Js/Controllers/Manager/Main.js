@@ -63,6 +63,11 @@ function addProduct() {
   const price = document.getElementById("idPrice").value;
   const discount = document.getElementById("idDiscount").value;
   const desc = document.getElementById("idDesc").value;
+  const isValid = validation();
+  if (!isValid) {
+    alert("Vui Lòng nhập vào các giá trị");
+    return;
+  }
   let product = new Products(
     null,
     brand,
@@ -101,6 +106,11 @@ function updateProduct() {
   const price = document.getElementById("idPrice").value;
   const discount = document.getElementById("idDiscount").value;
   const desc = document.getElementById("idDesc").value;
+  const isValid = validation();
+  if (!isValid) {
+    alert("Vui Lòng nhập vào các giá trị");
+    return;
+  }
 
   let product = new Products(
     id,
@@ -198,7 +208,7 @@ function handleSearch(evt) {
         product.total
       );
     }
-    console.log(products)
+    console.log(products);
     display(products);
   });
 }
@@ -211,4 +221,90 @@ function resetForm() {
   document.getElementById("idDiscount").value = "";
   document.getElementById("idDesc").value = "";
   $("#myModal").modal("hide");
+}
+function validation() {
+  const brand = document.getElementById("idBrand").value;
+  const pic = document.getElementById("idPic").value;
+  const name = document.getElementById("idName").value;
+  const price = document.getElementById("idPrice").value;
+  const discount = document.getElementById("idDiscount").value;
+  const desc = document.getElementById("idDesc").value;
+  let isValid = true;
+  if (!isRequired(brand)) {
+    isValid = false;
+    document.getElementById("brandNoti").innerHTML = "Không được để trống";
+  } else if (brand) {
+    switch (brand) {
+      case "A":
+        isValid = false;
+        document.getElementById("brandNoti").innerHTML =
+          "Vui lòng chọn đúng thương hiệu !!!";
+        break;
+      case "SAMSUNG":
+        isValid = true;
+        document.getElementById("brandNoti").innerHTML = "";
+        break;
+      case "APPLE":
+        isValid = true;
+        document.getElementById("brandNoti").innerHTML = "";
+        break;
+      case "XIAOMI":
+        isValid = true;
+        document.getElementById("brandNoti").innerHTML = "";
+        break;
+      default:
+        break;
+    }
+  } else {
+    document.getElementById("brandNoti").innerHTML = "";
+  }
+
+  if (!isRequired(pic)) {
+    isValid = false;
+    document.getElementById("picNoti").innerHTML = "Không được để trống";
+  } else {
+    document.getElementById("picNoti").innerHTML = "";
+  }
+
+  if (!isRequired(name)) {
+    isValid = false;
+    document.getElementById("nameNoti").innerHTML = "Không được để trống";
+  } else {
+    document.getElementById("nameNoti").innerHTML = "";
+  }
+  if (!isRequired(price)) {
+    isValid = false;
+    document.getElementById("priceNoti").innerHTML = "Không được để trống";
+  } else {
+    document.getElementById("priceNoti").innerHTML = "";
+  }
+  if (!isRequired(discount)) {
+    isValid = false;
+    document.getElementById("KMNoti").innerHTML = "Không được để trống";
+  } else if (discount <= 0 || discount > 100) {
+    isValid = false;
+    document.getElementById("KMNoti").innerHTML =
+      "Khuyến mãi không phù hợp !!!";
+  } else {
+    document.getElementById("KMNoti").innerHTML = "";
+  }
+  if (!isRequired(desc)) {
+    isValid = false;
+    document.getElementById("descNoti").innerHTML = "Không được để trống";
+  } else {
+    document.getElementById("descNoti").innerHTML = "";
+  }
+  return isValid;
+}
+function isRequired(value) {
+  if (!value) {
+    return false;
+  }
+  return true;
+}
+function minLength(value, limit) {
+  if (value.length < limit) {
+    return false;
+  }
+  return true;
 }
