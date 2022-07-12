@@ -23,39 +23,49 @@
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body class="bg-radien position-relative">
-        <!-- SIDEBAR -->
+    <!-- SIDEBAR -->
     <div class="cover position-absolute overflow-hidden">
-      <div id="show-slidebar" class="sidebar position-absolute px-4 ">
-          <div class="slidebar-title text-center py-4 position-relative">
-            <h3 >Giỏ hàng của bạn</h3>
-            <button id="btnCloseCart" type="button" class="position-absolute btn-close-cart"><i class="fa-solid fa-xmark"></i></button>
-          </div>
-          <!-- TABLE PRODUCT -->
-          <div class="tblProduct" id="tlbProduct">
-              <table class="table table-bordered">
-                <thead>
-                  <th class="clear-tbl">Hình ảnh</th>
-                  <th>Tên SP</th>
-                  <th>Số lượng</th>  
-                  <th>Giảm giá</th>
-                  <th>Thành tiền</th>              
-                </thead>
-                <tbody id="tblList">
-                  <!-- Render using Js -->
-                  
-                </tbody>
-              </table>
-          </div>
-          <!-- END TABLE -->
+      <div id="show-slidebar" class="sidebar position-absolute px-4">
+        <div class="slidebar-title text-center py-4 position-relative">
+          <h3>Giỏ hàng của bạn</h3>
+          <button
+            id="btnCloseCart"
+            type="button"
+            class="position-absolute btn-close-cart"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- TABLE PRODUCT -->
+        <div class="tblProduct" id="tlbProduct">
+          <table class="table table-bordered">
+            <thead>
+              <th class="clear-tbl">Hình ảnh</th>
+              <th>Tên SP</th>
+              <th>Số lượng</th>
+              <th>Giảm giá</th>
+              <th>Thành tiền</th>
+              <th>Xóa SP</th>
+            </thead>
+            <tbody id="tblList">
+              <!-- Render using Js -->
+            </tbody>
+          </table>
+        </div>
+        <!-- END TABLE -->
 
-          <!-- TOTAL CASH -->
-          <div id="totalPay" class="total pt-4 text-end">
-              <!-- <h6>Tổng Tiền : $</h6> -->
-          </div>
-          <div class="purchase text-end py-4">
-            <button class="btn-purchase me-3">PURCHASE <i class="fa-solid fa-credit-card"></i></button>
-            <button id="btnClearAll" class="btn-purchase">CLEAR <i class="fa-solid fa-trash-can"></i></button>
-          </div>
+        <!-- TOTAL CASH -->
+        <div id="totalPay" class="total pt-4 text-end">
+          <!-- <h6>Tổng Tiền : $</h6> -->
+        </div>
+        <div class="purchase text-end py-4">
+          <button class="btn-purchase me-3">
+            PURCHASE <i class="fa-solid fa-credit-card"></i>
+          </button>
+          <button id="btnClearAll" class="btn-purchase">
+            CLEAR <i class="fa-solid fa-trash-can"></i>
+          </button>
+        </div>
       </div>
     </div>
     <!-- HEADER -->
@@ -65,14 +75,11 @@
           <a href="#" class="navbar-brand n">Capstone JS</a>
           <div class="collapse navbar-collapse justify-content-end" id="myMenu">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <button
-                  id="btnShowCart"
-                  type="button"
-                  class="btn-add-cart"
-                >
+              <li class="nav-item posotion-relative">
+                <button id="btnShowCart" type="button" class="btn-add-cart">
                   <i class="fa-solid fa-cart-arrow-down"></i>
                 </button>
+                <div class="sub-cart position-absolute text-center"></div>
               </li>
             </ul>
           </div>
@@ -104,6 +111,7 @@
     <section class="container-m">
       <div class="list pt-5 px-4 px-xl-0">
         <div id="homePageRender" class="list-cover d-flex flex-wrap">
+
         </div>
       </div>
     </section>
@@ -131,6 +139,7 @@
     <script src="./Js/Render/RenderHomePage.js"></script>
     <script src="./Js/Render/RenderCartPage.js"></script>
     <script src="./Js/Controllers/Web/AddProductToCart.js"></script>
+    <!-- <script src="./Js/Controllers/Handle/TotalPay.js"></script> -->
     <script src="./Js/Controllers/Web/LocalStorage.js"></script>
     <script src="./Js/Controllers/Web/Filter.js"></script>
     <script src="./Js/Controllers/Handle/ClearAllProductFromCart.js"></script>
@@ -138,6 +147,5 @@
     <script src="./Js/Controllers/Handle/IncreaseProductFromCart.js"></script>
     <script src="./Js/Controllers/Handle/ReduceProductFromCart.js"></script>
     <script src="./Js/Controllers/Handle/HandleActionCart.js"></script>
-
   </body>
 </html>

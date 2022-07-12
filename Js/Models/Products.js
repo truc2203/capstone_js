@@ -1,18 +1,17 @@
 //
 class Products {
-  constructor(id,brand, pic, name, amount, price, discount, desc, total) {
+  constructor(id,brand, pic, name, amount, price, discount, desc) {
     (this.id = id),
       (this.pic = pic),
       this.brand = brand;
       (this.name = name),
-      (this.amount = amount),
-      (this.price = price),
-      (this.discount = discount),
+      (this.amount = parseInt(amount)),
+      (this.price = parseInt(price)),
+      (this.discount = parseInt(discount)),
       (this.desc = desc);
-    this.total = total;
   }
   getTotal() {
-    return ((parseInt(this.price)*parseInt(this.amount)) * (100 - parseInt(this.discount))) /100;
+    return ((this.price*this.amount) * (100 -this.discount)) /100;
   }
 }
  

@@ -13,6 +13,7 @@
     .list-info {
       div {
         padding: 4px 0;
+        max-width: 85%;
       }
       .name a {
         @include txtStyle($fs-1, $fw-1, $color-dark);
@@ -37,6 +38,19 @@
         top: 6px;
         &:hover {
           color: $color-hover;
+        }
+      }
+      .amount-product {
+        display: none;
+        top: 6px;
+        right: -6px;
+        border: 2px solid $color-dark;
+        padding: 0 4px;
+        border-radius: 8px;
+        & button,
+        span {
+          font-size: $fs-1;
+          font-weight: $fw-1;
         }
       }
     }

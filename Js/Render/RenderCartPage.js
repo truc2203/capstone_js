@@ -2,7 +2,7 @@
 
 //Array chứa tổng tiền tất cả sản phẩm
 const arrTotalPay = []
-
+let countAmount = 0
 const cartRender = (products) => {
   let totalPay = 0
   let cart = "";
@@ -15,7 +15,6 @@ const cartRender = (products) => {
     products.price,
     products.discount,
     products.desc,
-    products.total
   )
   
   cart += `<tr>
@@ -25,18 +24,19 @@ const cartRender = (products) => {
         <td>${product.name}</td>
         <td>
           <button data-type="increase" data-id="${product.id}" class="btn-number me-1"><i class="fa-solid fa-plus"></i></button>
-          ${parseInt(product.amount)}
-          <button data-type="reduce" data-id="${product.id}" class="btn-number ms-1"><i class="fa-solid fa-minus"></i></button>
+          ${product.amount}
+          <button data-type="reduce" data-id="${product.id}" id="btnDisabled" class="btn-number ms-1"><i class="fa-solid fa-minus"></i></button>
+          
         </td>
         <td>${product.discount}%</td>
         <td>$${Math.floor(product.getTotal())}</td>
-        <td><button data-type="delete" data-id="${product.id}" class="btn-del-product"><i class="fa-solid fa-trash"></i></button></td>
+        <td><button data-type="delete" data-id="${product.id}"  class="btn-del-product"><i class="fa-solid fa-trash"></i></button></td>
       </tr>
       `;
 
     //Duyệt mảng cộng dồn giá tất cả sản phẩm
     arrTotalPay.push(product.getTotal())
-    for( let i = 0;i< arrTotalPay.length ; i++){
+    for( let i = 0;i < arrTotalPay.length ; i++){
       totalPay += arrTotalPay[i]
     }
   //Render danh sách sản phẩm

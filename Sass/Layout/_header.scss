@@ -16,6 +16,18 @@
       @include trans;
     }
   }
+  .sub-cart{
+    top: 8px;
+    right: 12px;
+    width: $fs-add;
+    height: $fs-add;
+    border-radius: 50%;
+    background-color: $color-hover;
+    @include txtStyle($fs-1,$fw-1,$color-dark);
+    line-height: 20px;
+    margin-top: auto;
+    display: none;
+  }
 }
 //replace BS5
 .navbar-expand-md .navbar-collapse {

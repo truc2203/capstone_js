@@ -18,7 +18,6 @@ function init() {
         product.price,
         product.discount,
         product.desc,
-        product.total
       );
       arrProduct.push(product);
     }
@@ -73,11 +72,10 @@ function addProduct() {
     brand,
     pic,
     name,
-    "1",
+    1,
     price,
     discount,
     desc,
-    ""
   );
   apiAddProduct(product)
     .then((reponse) => {
@@ -117,11 +115,10 @@ function updateProduct() {
     brand,
     pic,
     name,
-    "1",
+    1,
     price,
     discount,
     desc,
-    ""
   );
   apiUpdateProducts(product)
     .then(() => {

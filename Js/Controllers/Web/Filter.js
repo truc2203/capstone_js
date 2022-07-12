@@ -14,7 +14,6 @@ const filterProduct = () =>{
                 product.price,
                 product.discount,
                 product.desc,
-                product.total
             )
         }
         renderWeb(products)
