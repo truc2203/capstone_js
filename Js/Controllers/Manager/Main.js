@@ -63,6 +63,7 @@ function addProduct() {
   const discount = document.getElementById("idDiscount").value;
   const desc = document.getElementById("idDesc").value;
   const isValid = validation();
+  const amount = 1
   if (!isValid) {
     alert("Vui Lòng nhập vào các giá trị");
     return;
@@ -72,7 +73,7 @@ function addProduct() {
     brand,
     pic,
     name,
-    1,
+    amount,
     price,
     discount,
     desc,
