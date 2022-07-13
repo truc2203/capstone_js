@@ -9,6 +9,7 @@ const deleteProductCart = (idProduct) => {
       localStorage.setItem("products", JSON.stringify(localProducts));
       document.getElementById("tblList").innerHTML = "";
       countAmount -= product.amount
+      document.getElementById(`countAmount${product.id}`).innerHTML = 1
       document.querySelector('.sub-cart').style.display = "block"
       document.querySelector('.sub-cart').innerHTML = countAmount
       if(countAmount < 1)
