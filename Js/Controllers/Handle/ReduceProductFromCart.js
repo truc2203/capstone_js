@@ -6,6 +6,7 @@ const reduceProductCart = (idProduct) => {
          if(product.amount === 1)
         {
           product.amount += 0
+          countAmount -= 1
           document.getElementById(`countAmount${product.id}`).innerHTML = `${product.amount = 0}`
           deleteProductCart(product.id)
           document.getElementById(`addCart${product.id}`).style.display = 'Block'

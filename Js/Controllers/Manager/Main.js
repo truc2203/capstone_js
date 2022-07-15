@@ -65,7 +65,7 @@ function addProduct() {
   const isValid = validation();
   const amount = 1
   if (!isValid) {
-    alert("Vui Lòng nhập vào các giá trị");
+    // alert("Vui Lòng nhập vào các giá trị");
     return;
   }
   let product = new Products(
@@ -82,6 +82,7 @@ function addProduct() {
     .then((reponse) => {
       console.log(reponse.data);
       init();
+      resetForm();
     })
     .catch((error) => {
       console.log(error);
@@ -106,17 +107,16 @@ function updateProduct() {
   const discount = document.getElementById("idDiscount").value;
   const desc = document.getElementById("idDesc").value;
   const isValid = validation();
-  if (!isValid) {
-    alert("Vui Lòng nhập vào các giá trị");
+  const amount = 1;
+  if(!isValid) {
     return;
   }
-
   let product = new Products(
     id,
     brand,
     pic,
     name,
-    1,
+    amount,
     price,
     discount,
     desc,
@@ -135,7 +135,9 @@ function showAddModal() {
   document.querySelector(".modal-title").innerHTML = "Add Products";
   document.querySelector(
     ".modal-footer"
-  ).innerHTML = `<button class="btn btn-success" data-type="add">Thêm sản phẩm</button> <button data-target="#myModal" data-toggle="modal" class="btn btn-danger">Hủy</button>`;
+  ).innerHTML = `
+  <button class="btn btn-success" data-type="add">Thêm sản phẩm</button>
+   <button onClick="resetForm()" data-target="#myModal" data-toggle="modal" class="btn btn-danger">Hủy</button>`;
 }
 document.querySelector(".modal-footer").addEventListener("click", handlesubmit);
 function handlesubmit(event) {
@@ -170,7 +172,9 @@ function showUpdateModal(productId) {
   document.querySelector(".modal-title").innerHTML = "Cập nhật sản phẩm";
   document.querySelector(
     ".modal-footer"
-  ).innerHTML = `<button class="btn btn-success" data-type="update" data-toggle="modal" data-target="#myModal">Cập nhật</button> <button class="btn btn-secondary" data-toggle="modal" data-target="#myModal" >Hủy</button>`;
+  ).innerHTML = `
+  <button class="btn btn-success" data-type="update" data-toggle="modal" data-target="#myModal">Cập nhật</button> 
+  <button onClick="resetForm()" class="btn btn-secondary" data-toggle="modal" data-target="#myModal" >Hủy</button>`;
   apiGetProductDetail(productId)
     .then((reponse) => {
       let product = reponse.data;
@@ -218,6 +222,13 @@ function resetForm() {
   document.getElementById("idPrice").value = "";
   document.getElementById("idDiscount").value = "";
   document.getElementById("idDesc").value = "";
+  document.getElementById("brandNoti").innerHTML = "";
+  document.getElementById("picNoti").innerHTML = "";
+  document.getElementById("nameNoti").innerHTML = "";
+  document.getElementById("priceNoti").innerHTML = "";
+  document.getElementById("KMNoti").innerHTML = "";
+  document.getElementById("descNoti").innerHTML = "";
+
   $("#myModal").modal("hide");
 }
 function validation() {
@@ -228,6 +239,8 @@ function validation() {
   const discount = document.getElementById("idDiscount").value;
   const desc = document.getElementById("idDesc").value;
   let isValid = true;
+  let pricePattern = new RegExp("^[0-9]")
+  let discountPattern = new RegExp("^[0-9]")
   if (!isRequired(brand)) {
     isValid = false;
     document.getElementById("brandNoti").innerHTML = "Không được để trống";
@@ -236,7 +249,7 @@ function validation() {
       case "A":
         isValid = false;
         document.getElementById("brandNoti").innerHTML =
-          "Vui lòng chọn đúng thương hiệu !!!";
+          "Vui lòng chọn thương hiệu !!!";
         break;
       case "SAMSUNG":
         isValid = true;
@@ -259,36 +272,48 @@ function validation() {
 
   if (!isRequired(pic)) {
     isValid = false;
-    document.getElementById("picNoti").innerHTML = "Không được để trống";
+    document.getElementById("picNoti").innerHTML = "Hình ảnh không được để trống";
   } else {
     document.getElementById("picNoti").innerHTML = "";
   }
 
   if (!isRequired(name)) {
     isValid = false;
-    document.getElementById("nameNoti").innerHTML = "Không được để trống";
+    document.getElementById("nameNoti").innerHTML = "Tên không được để trống";
   } else {
     document.getElementById("nameNoti").innerHTML = "";
   }
   if (!isRequired(price)) {
     isValid = false;
-    document.getElementById("priceNoti").innerHTML = "Không được để trống";
-  } else {
+    document.getElementById("priceNoti").innerHTML = "Giá tiền không được để trống";
+  } 
+  else if(!pricePattern.test(price))
+  {
+    isValid = false
+    document.getElementById("priceNoti").innerHTML = "Giá tiền phải là ký tự số";
+  }
+  else {
     document.getElementById("priceNoti").innerHTML = "";
   }
   if (!isRequired(discount)) {
     isValid = false;
-    document.getElementById("KMNoti").innerHTML = "Không được để trống";
-  } else if (discount <= 0 || discount > 100) {
+    document.getElementById("KMNoti").innerHTML = "Khuyến mãi không được để trống";
+  } 
+  else if(!discountPattern.test(discount))
+  {
+    isValid = false
+    document.getElementById("KMNoti").innerHTML = "Khuyến mãi phải là ký tự số ";
+  }
+  else if (discount <= 0 || discount > 100) {
     isValid = false;
     document.getElementById("KMNoti").innerHTML =
-      "Khuyến mãi không phù hợp !!!";
+      "Khuyến mãi phải trong khoản 0 - 100 !!!";
   } else {
     document.getElementById("KMNoti").innerHTML = "";
   }
   if (!isRequired(desc)) {
     isValid = false;
-    document.getElementById("descNoti").innerHTML = "Không được để trống";
+    document.getElementById("descNoti").innerHTML = "Mô tả không được để trống";
   } else {
     document.getElementById("descNoti").innerHTML = "";
   }
