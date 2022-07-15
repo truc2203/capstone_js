@@ -106,8 +106,8 @@ function updateProduct() {
   const price = document.getElementById("idPrice").value;
   const discount = document.getElementById("idDiscount").value;
   const desc = document.getElementById("idDesc").value;
-  const isValid = validation();
   const amount = 1;
+    const isValid = validation();
   if(!isValid) {
     return;
   }
@@ -173,7 +173,7 @@ function showUpdateModal(productId) {
   document.querySelector(
     ".modal-footer"
   ).innerHTML = `
-  <button class="btn btn-success" data-type="update" data-toggle="modal" data-target="#myModal">Cập nhật</button> 
+  <button class="btn btn-success" data-type="update" >Cập nhật</button> 
   <button onClick="resetForm()" class="btn btn-secondary" data-toggle="modal" data-target="#myModal" >Hủy</button>`;
   apiGetProductDetail(productId)
     .then((reponse) => {
