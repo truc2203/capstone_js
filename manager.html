@@ -17,19 +17,29 @@
     />
   </head>
   <style>
-    .sp-noti{
-      background: linear-gradient(330deg, #e5da18 0%, #6a54cc 25%, #9e297f 50%, #7809e8 75%, #e11313 100%);
+    .sp-noti {
+      background: linear-gradient(
+        330deg,
+        #e5da18 0%,
+        #6a54cc 25%,
+        #9e297f 50%,
+        #7809e8 75%,
+        #e11313 100%
+      );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: block;
       font-size: 13px;
       margin-top: 4px;
       font-weight: 500;
-  }
+    }
   </style>
   <body>
-    <div class="container" style="max-width: 100%;">
-      <nav style="display: none;" class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <div class="container" style="max-width: 100%">
+      <nav
+        style="display: none"
+        class="navbar navbar-expand-sm navbar-dark bg-primary"
+      >
         <a class="navbar-brand" href="#">Navbar</a>
         <button
           class="navbar-toggler d-lg-none"
@@ -69,7 +79,7 @@
         </div>
       </nav>
 
-      <header class="display-4 my-4 sp-noti" style="font-size: 56px;">
+      <header class="display-4 my-4 sp-noti" style="font-size: 56px">
         CAPSTONE JS
       </header>
       <!-- Phan tab menu -->
@@ -83,20 +93,19 @@
             >Danh sách sản phẩm</a
           >
         </li>
-        
       </ul>
       <br />
       <!-- Tab panes -->
       <div class="tab-content">
         <!--Danh sách sản phẩm -->
-        <div role="tabpanel" class="tab-pane  in active" id="DanhSachSP">
+        <div role="tabpanel" class="tab-pane in active" id="DanhSachSP">
           <div class="row">
             <div class="col-md-8">
               <!-- BEGIN BUTTOM THÊM MỚI -->
               <button
                 id="btnThem"
                 class="btn btn-success sp-noti"
-                style="font-size: 16px;"
+                style="font-size: 16px"
                 data-toggle="modal"
                 data-target="#myModal"
               >
@@ -144,7 +153,7 @@
           </div>
           <br />
         </div>
-        <!-- Kết thúc danh sách sản phẩm -->       
+        <!-- Kết thúc danh sách sản phẩm -->
       </div>
 
       <!--KetThuc Tabmenu-->
@@ -163,16 +172,20 @@
             <!-- Modal body -->
             <div class="modal-body">
               <!-- Lưu id sản phẩm -->
-              <input type="text" id="idNumber" hidden>
+              <input type="text" id="idNumber" hidden />
               <div class="form-group">
                 <label for="">Thương hiệu</label>
-                <select id="idBrand" class="form-select w-100" aria-label="Default select example">
+                <select
+                  id="idBrand"
+                  class="form-select w-100"
+                  aria-label="Default select example"
+                >
                   <option value="A" selected>Chọn thương hiệu</option>
                   <option value="SAMSUNG">SAMSUNG</option>
                   <option value="APPLE">APPLE</option>
                   <option value="XIAOMI">XIAOMI</option>
                 </select>
-                <span class="sp-noti" id="brandNoti" ></span>
+                <span class="sp-noti" id="brandNoti"></span>
               </div>
               <div class="form-group">
                 <label>Hình ảnh</label>
@@ -181,7 +194,7 @@
                   class="form-control"
                   placeholder="Chọn hình ảnh"
                 />
-                <span class="sp-noti" id="picNoti" ></span>
+                <span class="sp-noti" id="picNoti"></span>
               </div>
               <div class="form-group">
                 <label>Tên SP</label>
@@ -190,8 +203,8 @@
                   class="form-control"
                   placeholder="Nhập tên sản phẩm"
                 />
-                <span class="sp-noti" id="nameNoti" ></span>
-              </div>             
+                <span class="sp-noti" id="nameNoti"></span>
+              </div>
               <div class="form-group">
                 <label>Giá</label>
                 <input
@@ -199,28 +212,29 @@
                   class="form-control"
                   placeholder="Nhập giá tiền"
                 />
-                <span class="sp-noti" id="priceNoti" ></span>
+                <span class="sp-noti" id="priceNoti"></span>
               </div>
               <div class="form-group">
                 <label for="">Khuyến mãi</label>
                 <input
-                id="idDiscount"
-                class="form-control"
-                placeholder="Nhập % khuyến mãi"
-              />
-              <span class="sp-noti" id="KMNoti" ></span>
+                  id="idDiscount"
+                  class="form-control"
+                  placeholder="Nhập % khuyến mãi"
+                />
+                <span class="sp-noti" id="KMNoti"></span>
               </div>
               <div class="form-group">
                 <label for="">Mô tả</label>
                 <input
-                id="idDesc"
-                class="form-control"
-                placeholder="Nhập mô tả sản phẩm"
-              />
-              <span class="sp-noti" id="descNoti" ></span>
+                  id="idDesc"
+                  class="form-control"
+                  placeholder="Nhập mô tả sản phẩm"
+                />
+                <span class="sp-noti" id="descNoti"></span>
               </div>
-            <!-- Modal footer -->
-            <div class="modal-footer"></div>
+              <!-- Modal footer -->
+              <div class="modal-footer"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -253,7 +267,7 @@
     <script src="https://code.highcharts.com/modules/series-label.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    
+
     <!-- Link -->
     <script src="./Js/API/ProductsAPI.js"></script>
     <script src="./Js/Models/Products.js"></script>
