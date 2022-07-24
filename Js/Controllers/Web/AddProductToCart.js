@@ -10,19 +10,40 @@ const addCart = (event) => {
   }
   if(type === "push")
   {
-  
-    APIAddProductToCart(id).then(function (result) {
-      let products = result.data;
-      localProducts.push(products);
-      //set localstorege
+    
+    const index = localProducts.findIndex((product) => product.id === id)
+    if(index === -1)
+    {
+      APIAddProductToCart(id).then(function (result) {
+        let products = result.data;
+        localProducts.push(products);
+        //set localstorege
+        localStorage.setItem("products", JSON.stringify(localProducts));
+        cartRender(products);
+      });
+      countAmount += 1
+      document.querySelector('.sub-cart').style.display = "block"
+      document.querySelector('.sub-cart').innerHTML = countAmount
+      document.getElementById(`addCart${id}`).style.display = 'None'
+      document.querySelector(`.showAmount${id}`).style.display = 'Block'    
+      // document.getElementById(`countAmount${id}`).innerHTML = `${products.amount}`
+
+    }
+    if(index !== -1)
+    {
+      let products = localProducts[index]
+      products.amount += 1
       localStorage.setItem("products", JSON.stringify(localProducts));
       cartRender(products);
-    });
-    countAmount += 1
-    document.querySelector('.sub-cart').style.display = "block"
-    document.querySelector('.sub-cart').innerHTML = countAmount
-    document.getElementById(`addCart${id}`).style.display = 'None'
-    document.querySelector(`.showAmount${id}`).style.display = 'Block'
+      countAmount += 1
+      document.querySelector('.sub-cart').style.display = "block"
+      document.querySelector('.sub-cart').innerHTML = countAmount
+      document.getElementById(`addCart${id}`).style.display = 'None'
+      document.querySelector(`.showAmount${id}`).style.display = 'Block'
+      document.getElementById(`countAmount${id}`).innerHTML = `${products.amount}`
+
+    }
+
   }
   if(type === "increase-web")
   {

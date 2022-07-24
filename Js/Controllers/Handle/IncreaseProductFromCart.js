@@ -6,7 +6,6 @@ const increaseProductCart = (idProduct) => {
       product.amount += 1;
       //Tăng só lượng sản phẩm thêm 1 và render ra giao diện web
       document.getElementById(`countAmount${product.id}`).innerHTML = `${product.amount}`
-      
       if(product.amount > 1)
       {
         countAmount += 1
