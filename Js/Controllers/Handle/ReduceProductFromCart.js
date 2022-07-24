@@ -19,7 +19,7 @@ const reduceProductCart = (idProduct) => {
         countAmount -= 1
         if(countAmount < 1)
               {
-                countAmount = 0
+                countAmount = 1
                 document.querySelector('.sub-cart').style.display = "none"
                 document.querySelector('.sub-cart').innerHTML = countAmount
               }
