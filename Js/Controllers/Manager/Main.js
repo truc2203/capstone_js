@@ -63,7 +63,7 @@ function addProduct() {
   const discount = document.getElementById("idDiscount").value;
   const desc = document.getElementById("idDesc").value;
   const isValid = validation();
-  const amount = 1
+  const amount = 0
   if (!isValid) {
     // alert("Vui Lòng nhập vào các giá trị");
     return;
@@ -106,7 +106,7 @@ function updateProduct() {
   const price = document.getElementById("idPrice").value;
   const discount = document.getElementById("idDiscount").value;
   const desc = document.getElementById("idDesc").value;
-  const amount = 1;
+  const amount = 0;
     const isValid = validation();
   if(!isValid) {
     return;

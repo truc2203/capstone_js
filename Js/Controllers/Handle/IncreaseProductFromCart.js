@@ -8,9 +8,6 @@ const increaseProductCart = (idProduct) => {
       document.getElementById(`countAmount${product.id}`).innerHTML = `${product.amount}`
       if(product.amount > 1)
       {
-        countAmount += 1
-        document.querySelector('.sub-cart').style.display = "block"
-        document.querySelector('.sub-cart').innerHTML = countAmount
         document.getElementById(`addCart${product.id}`).style.display = 'None'
         document.querySelector(`.showAmount${product.id}`).style.display = 'Block'
       }

@@ -10,17 +10,17 @@ const deleteProductCart = (idProduct) => {
       document.getElementById("tblList").innerHTML = "";
       countAmount -= product.amount
       document.getElementById(`countAmount${product.id}`).innerHTML = 1
-      document.querySelector('.sub-cart').style.display = "block"
-      document.querySelector('.sub-cart').innerHTML = countAmount
-      if(countAmount < 1)
-          {
-            document.querySelector('.sub-cart').style.display = "none"
-            document.querySelector('.sub-cart').innerHTML = countAmount
-          }
-          else{
-            document.querySelector('.sub-cart').style.display = "block"
-            document.querySelector('.sub-cart').innerHTML = countAmount
-          }
+      // document.querySelector('.sub-cart').style.display = "block"
+      // document.querySelector('.sub-cart').innerHTML = countAmount
+      // if(countAmount < 1)
+      //     {
+      //       document.querySelector('.sub-cart').style.display = "none"
+      //       document.querySelector('.sub-cart').innerHTML = countAmount
+      //     }
+      //     else{
+      //       document.querySelector('.sub-cart').style.display = "block"
+      //       document.querySelector('.sub-cart').innerHTML = countAmount
+      //     }
       localRender();
       if(localProducts.length < 1)
       {
