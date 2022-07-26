@@ -9,7 +9,7 @@ const localRender = () => {
   arrTotalPay.splice(0, count);
   for (let i = 0; i < localProducts.length; i++) {
     counTotal += localProducts[i].amount;
-  console.log(localProducts);
+  // console.log(localProducts);
     cartRender(localProducts[i]);
   }
   countAmount = counTotal;

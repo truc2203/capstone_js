@@ -190,10 +190,10 @@ function showUpdateModal(productId) {
       console.log(error);
     });
 }
-document.getElementById("txtSearch").addEventListener("keypress", handleSearch);
+document.getElementById("btnSearch").addEventListener("click", handleSearch);
 function handleSearch(evt) {
-  if (evt.key !== "Enter") return;
-  let value = evt.target.value;
+  let value = document.getElementById('txtSearch').value;
+  // console.log(value);
   APIGetProducts(value).then((response) => {
     let products = response.data;
     for (let i = 0; i < products.length; i++) {

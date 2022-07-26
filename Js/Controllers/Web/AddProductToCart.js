@@ -12,23 +12,25 @@ const addCart = (event) => {
     const index = localProducts.findIndex((product) => product.id === id);
     if (index === -1) {
       APIAddProductToCart(id).then(function (result) {
+        document.getElementById("tblList").innerHTML = '' 
         let products = result.data;
         products.amount += 1;
         localProducts.push(products);
         localStorage.setItem("products", JSON.stringify(localProducts));
-        // localRender()
-        console.log('add to cart');
-
+        // console.log('add to cart');
+      localRender()
       });
+
       document.getElementById(`addCart${id}`).style.display = "None";
       document.querySelector(`.showAmount${id}`).style.display = "Block";
     }
     if (index !== -1) {
+      document.getElementById("tblList").innerHTML = '' 
       let products = localProducts[index];
       products.amount += 1;
       localStorage.setItem("products", JSON.stringify(localProducts));  
-      // localRender()
-      console.log('increase quantity');
+      localRender()
+      // console.log('increase quantity');
 
       document.getElementById(`addCart${id}`).style.display = "None";
       document.querySelector(`.showAmount${id}`).style.display = "Block";
@@ -37,7 +39,6 @@ const addCart = (event) => {
       ).innerHTML = `${products.amount}`;
     }
   }
-  localRender()
   if (type === "increase-web") {
     increaseProductCart(id);
   }
