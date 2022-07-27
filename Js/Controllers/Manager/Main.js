@@ -63,7 +63,7 @@ function addProduct() {
   const discount = document.getElementById("idDiscount").value;
   const desc = document.getElementById("idDesc").value;
   const isValid = validation();
-  const amount = 1
+  const amount = 0
   if (!isValid) {
     // alert("Vui Lòng nhập vào các giá trị");
     return;
@@ -106,7 +106,7 @@ function updateProduct() {
   const price = document.getElementById("idPrice").value;
   const discount = document.getElementById("idDiscount").value;
   const desc = document.getElementById("idDesc").value;
-  const amount = 1;
+  const amount = 0;
     const isValid = validation();
   if(!isValid) {
     return;
@@ -190,10 +190,10 @@ function showUpdateModal(productId) {
       console.log(error);
     });
 }
-document.getElementById("txtSearch").addEventListener("keypress", handleSearch);
+document.getElementById("btnSearch").addEventListener("click", handleSearch);
 function handleSearch(evt) {
-  if (evt.key !== "Enter") return;
-  let value = evt.target.value;
+  let value = document.getElementById('txtSearch').value;
+  // console.log(value);
   APIGetProducts(value).then((response) => {
     let products = response.data;
     for (let i = 0; i < products.length; i++) {

@@ -28,7 +28,7 @@ const renderWeb = (products) =>{
     for(let i in products)
     {
         let product = products[i]
-        homePage += `<div class="col-12 col-sm-6 col-lg-4 col-xl-3 px-4 pb-5">
+        homePage += `<div class="col-12 col-sm-6 col-lg-4 col-xl-3 px-4 pb-5 animate__animated animate__zoomIn">
         <div class="list-card p-3 border rounded-3">
           <div class="list-img">
             <img  
