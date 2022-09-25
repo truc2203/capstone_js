@@ -1,50 +1,25 @@
-//Array localstorege
-let localProducts = [];
-
-//Thêm sản phẩm vào giỏ hàng
-const addCart = (event) => {
-  let id = event.target.parentElement.getAttribute("data-id");
-  let type = event.target.parentElement.getAttribute("data-type");
-  if (id === null) {
-    return;
-  }
-  if (type === "push") {
-    const index = localProducts.findIndex((product) => product.id === id);
-    if (index === -1) {
-      APIAddProductToCart(id).then(function (result) {
-        document.getElementById("tblList").innerHTML = '' 
-        let products = result.data;
-        products.amount += 1;
-        localProducts.push(products);
-        localStorage.setItem("products", JSON.stringify(localProducts));
-        // console.log('add to cart');
-      localRender()
-      });
-
-      document.getElementById(`addCart${id}`).style.display = "None";
-      document.querySelector(`.showAmount${id}`).style.display = "Block";
+const increaseProductCart = (idProduct) => {
+  let product;
+  for (i = 0; i < localProducts.length; i++) {
+    product = localProducts[i];
+    if (product.id === idProduct) {
+      product.amount += 1;
+      //Tăng só lượng sản phẩm thêm 1 và render ra giao diện web
+      document.getElementById(`countAmount${product.id}`).innerHTML = `${product.amount}`
+      if(product.amount > 1)
+      {
+        document.getElementById(`addCart${product.id}`).style.display = 'None'
+        document.querySelector(`.showAmount${product.id}`).style.display = 'Block'
+      }
+      //Lưu localstorege
+      localStorage.setItem("products", JSON.stringify(localProducts));
+      //reset
+      document.getElementById("tblList").innerHTML = "";
+      //render lại giao diện giỏ hàng
+      localRender();
+   
     }
-    if (index !== -1) {
-      document.getElementById("tblList").innerHTML = '' 
-      let products = localProducts[index];
-      products.amount += 1;
-      localStorage.setItem("products", JSON.stringify(localProducts));  
-      localRender()
-      // console.log('increase quantity');
-
-      document.getElementById(`addCart${id}`).style.display = "None";
-      document.querySelector(`.showAmount${id}`).style.display = "Block";
-      document.getElementById(
-        `countAmount${id}`
-      ).innerHTML = `${products.amount}`;
-    }
+    // cartRender(product);
   }
-  if (type === "increase-web") {
-    increaseProductCart(id);
-  }
-  if (type === "reduce-web") {
-    reduceProductCart(id);
-  }
+ 
 };
-//Event click của btn thêm SP
-document.getElementById("homePageRender").addEventListener("click", addCart);
