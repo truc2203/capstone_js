@@ -19,9 +19,6 @@ const increaseProductCart = (idProduct) => {
       localRender();
    
     }
-    else{
-      alert('not')
-    }
     // cartRender(product);
   }
  
